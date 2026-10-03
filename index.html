@@ -14,13 +14,13 @@
     
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #050508;
+      background-color: #000000;
       color: #ffffff;
     }
 
     .neon-border {
       border: 2px solid #a855f7;
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
     }
 
     .card-glow {
@@ -33,7 +33,7 @@
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
     }
     ::-webkit-scrollbar-track {
       background: #09090e;
@@ -42,170 +42,163 @@
       background: #3b0764;
       border-radius: 4px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #581c87;
-    }
-
-    @keyframes pulse-slow {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.85; transform: scale(1.02); }
-    }
-    .animate-pulse-slow {
-      animation: pulse-slow 3s infinite ease-in-out;
-    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
 
-  <!-- ================= TOP NAVIGATION BAR (STICKY) ================= -->
-  <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-purple-200">
-    <div class="max-w-7xl mx-auto px-2 sm:px-4 py-2 flex items-center justify-between">
+  <!-- ================= TOP NAVIGATION BAR (COMPACT LIKE SCREENSHOT) ================= -->
+  <header class="sticky top-0 z-40 w-full bg-white text-slate-800 shadow-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-2 sm:px-3 py-1.5 flex items-center justify-between gap-1">
       
       <!-- LOGO -->
-      <a href="javascript:void(0)" onclick="openWelcomeModal()" class="flex items-center gap-2 group shrink-0">
-        <div class="bg-gradient-to-r from-red-600 to-purple-600 text-white font-black text-lg sm:text-xl px-3 py-1.5 rounded-lg shadow-md transform group-hover:scale-105 transition">
+      <a href="javascript:void(0)" onclick="openWelcomeModal()" class="flex items-center shrink-0">
+        <div class="bg-gradient-to-r from-red-600 to-purple-700 text-white font-black text-xs sm:text-sm px-2.5 py-1 rounded shadow group hover:scale-105 transition">
           SHOP KATORI
         </div>
       </a>
 
-      <!-- DESKTOP NAVBAR (LAPTOP / PC ONLY) -->
-      <nav class="hidden md:flex items-center gap-1.5 lg:gap-2 flex-wrap text-xs lg:text-sm font-bold">
-        <button onclick="openWelcomeModal()" class="flex items-center gap-1.5 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-full shadow transition">
-          <i class="fa-solid fa-house"></i> TRANG CHỦ
+      <!-- DESKTOP NAVBAR (LAPTOP / PC - COMPACT PILL BUTTONS) -->
+      <nav class="hidden md:flex items-center gap-1 text-[11px] font-extrabold uppercase">
+        <button onclick="openWelcomeModal()" class="flex items-center gap-1 bg-blue-500 hover:bg-blue-600 text-white px-2.5 py-1 rounded shadow-sm transition">
+          <i class="fa-solid fa-house text-[10px]"></i> TRANG CHỦ
         </button>
 
         <div class="relative group">
-          <button class="flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-full shadow transition">
-            <i class="fa-solid fa-clock-rotate-left"></i> LỊCH SỬ MUA <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          <button class="flex items-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white px-2.5 py-1 rounded shadow-sm transition">
+            <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> LỊCH SỬ MUA <i class="fa-solid fa-chevron-down text-[8px] opacity-70"></i>
           </button>
-          <div class="absolute left-0 top-full mt-1 w-48 bg-white text-gray-800 rounded-xl shadow-xl border border-gray-100 hidden group-hover:block overflow-hidden z-50">
-            <a href="javascript:void(0)" onclick="requireLogin('Lịch sử mua')" class="block px-4 py-2.5 hover:bg-emerald-50 font-medium border-b text-xs">Acc Blox Fruit</a>
-            <a href="javascript:void(0)" onclick="requireLogin('Lịch sử cày thuê')" class="block px-4 py-2.5 hover:bg-emerald-50 font-medium text-xs">Dịch Vụ Cày Thuê</a>
+          <div class="absolute left-0 top-full mt-1 w-44 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-100 hidden group-hover:block overflow-hidden z-50 capitalize normal-case text-xs font-semibold">
+            <a href="javascript:void(0)" onclick="requireLogin('Lịch sử mua')" class="block px-3 py-2 hover:bg-emerald-50 border-b">Acc Blox Fruit</a>
+            <a href="javascript:void(0)" onclick="requireLogin('Lịch sử cày thuê')" class="block px-3 py-2 hover:bg-emerald-50">Dịch Vụ Cày Thuê</a>
           </div>
         </div>
 
         <div class="relative group">
-          <button class="flex items-center gap-1.5 bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-full shadow transition">
-            <i class="fa-solid fa-grid-2"></i> DỊCH VỤ KHÁC <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          <button class="flex items-center gap-1 bg-orange-500 hover:bg-orange-600 text-white px-2.5 py-1 rounded shadow-sm transition">
+            <i class="fa-solid fa-grid-2 text-[10px]"></i> DỊCH VỤ KHÁC <i class="fa-solid fa-chevron-down text-[8px] opacity-70"></i>
           </button>
-          <div class="absolute left-0 top-full mt-1 w-52 bg-white text-gray-800 rounded-xl shadow-xl border border-gray-100 hidden group-hover:block overflow-hidden z-50">
-            <a href="#services" class="block px-4 py-2.5 hover:bg-orange-50 font-medium border-b text-xs">Cày Thuê Blox Fruits</a>
-            <a href="#services" class="block px-4 py-2.5 hover:bg-orange-50 font-medium border-b text-xs">Mua Trái Vĩnh Viễn</a>
-            <a href="#services" class="block px-4 py-2.5 hover:bg-orange-50 font-medium text-xs">Acc Random 20k-50k</a>
+          <div class="absolute left-0 top-full mt-1 w-48 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-100 hidden group-hover:block overflow-hidden z-50 capitalize normal-case text-xs font-semibold">
+            <a href="#services" class="block px-3 py-2 hover:bg-orange-50 border-b">Cày Thuê Blox Fruits</a>
+            <a href="#services" class="block px-3 py-2 hover:bg-orange-50 border-b">Mua Trái Vĩnh Viễn</a>
+            <a href="#services" class="block px-3 py-2 hover:bg-orange-50">Acc Random 20k-50k</a>
           </div>
         </div>
 
-        <button onclick="requireLogin('Hồ Sơ')" class="flex items-center gap-1.5 bg-cyan-500 hover:bg-cyan-600 text-white px-3 py-1.5 rounded-full shadow transition">
-          <i class="fa-solid fa-id-card"></i> HỒ SƠ
+        <button onclick="requireLogin('Hồ Sơ')" class="flex items-center gap-1 bg-cyan-500 hover:bg-cyan-600 text-white px-2.5 py-1 rounded shadow-sm transition">
+          <i class="fa-solid fa-id-card text-[10px]"></i> HỒ SƠ
         </button>
 
         <div class="relative group">
-          <button onclick="requireLogin('Nạp Tiền')" class="flex items-center gap-1.5 bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-full shadow transition">
-            <i class="fa-solid fa-wallet"></i> NẠP TIỀN <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          <button onclick="requireLogin('Nạp Tiền')" class="flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-2.5 py-1 rounded shadow-sm transition">
+            <i class="fa-solid fa-wallet text-[10px]"></i> NẠP TIỀN <i class="fa-solid fa-chevron-down text-[8px] opacity-70"></i>
           </button>
-          <div class="absolute left-0 top-full mt-1 w-48 bg-white text-gray-800 rounded-xl shadow-xl border border-gray-100 hidden group-hover:block overflow-hidden z-50">
-            <a href="javascript:void(0)" onclick="requireLogin('Nạp Thẻ Auto')" class="block px-4 py-2.5 hover:bg-red-50 font-medium border-b text-xs">Nạp Thẻ Tự Động</a>
-            <a href="javascript:void(0)" onclick="requireLogin('Nạp Ngân Hàng / MoMo')" class="block px-4 py-2.5 hover:bg-red-50 font-medium text-xs">ATM / Ví MoMo (+20%)</a>
+          <div class="absolute left-0 top-full mt-1 w-44 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-100 hidden group-hover:block overflow-hidden z-50 capitalize normal-case text-xs font-semibold">
+            <a href="javascript:void(0)" onclick="requireLogin('Nạp Thẻ Auto')" class="block px-3 py-2 hover:bg-red-50 border-b">Thẻ Cào Tự Động</a>
+            <a href="javascript:void(0)" onclick="requireLogin('Nạp Ngân Hàng / MoMo')" class="block px-3 py-2 hover:bg-red-50">Ngân Hàng / MoMo (+20%)</a>
           </div>
         </div>
 
-        <button onclick="requireLogin('Dòng Tiền')" class="flex items-center gap-1.5 bg-slate-600 hover:bg-slate-700 text-white px-3 py-1.5 rounded-full shadow transition">
-          <i class="fa-solid fa-dollar-sign"></i> DÒNG TIỀN
+        <button onclick="requireLogin('Dòng Tiền')" class="flex items-center gap-1 bg-slate-600 hover:bg-slate-700 text-white px-2.5 py-1 rounded shadow-sm transition">
+          <i class="fa-solid fa-dollar-sign text-[10px]"></i> DÒNG TIỀN
         </button>
 
-        <button onclick="alert('Tính năng Tin Tức đang cập nhật!')" class="flex items-center gap-1.5 bg-sky-400 hover:bg-sky-500 text-white px-3 py-1.5 rounded-full shadow transition">
-          <i class="fa-solid fa-newspaper"></i> TIN TỨC
+        <button onclick="alert('Tính năng Tin Tức đang cập nhật!')" class="flex items-center gap-1 bg-sky-400 hover:bg-sky-500 text-white px-2.5 py-1 rounded shadow-sm transition">
+          <i class="fa-solid fa-newspaper text-[10px]"></i> TIN TỨC
         </button>
 
         <div class="relative group">
-          <button class="flex items-center gap-1.5 bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-1.5 rounded-full shadow transition">
-            <i class="fa-solid fa-circle-plus"></i> BỔ SUNG <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          <button class="flex items-center gap-1 bg-indigo-500 hover:bg-indigo-600 text-white px-2.5 py-1 rounded shadow-sm transition">
+            <i class="fa-solid fa-circle-plus text-[10px]"></i> BỔ SUNG <i class="fa-solid fa-chevron-down text-[8px] opacity-70"></i>
           </button>
-          <div class="absolute right-0 top-full mt-1 w-48 bg-white text-gray-800 rounded-xl shadow-xl border border-gray-100 hidden group-hover:block overflow-hidden z-50">
-            <a href="javascript:void(0)" onclick="alert('Vòng quay may mắn sắp mở!')" class="block px-4 py-2.5 hover:bg-indigo-50 font-medium border-b text-xs">Vòng Quay Robux</a>
-            <a href="javascript:void(0)" onclick="openWelcomeModal()" class="block px-4 py-2.5 hover:bg-indigo-50 font-medium text-xs">Quy Định &amp; Bảo Hành</a>
+          <div class="absolute right-0 top-full mt-1 w-44 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-100 hidden group-hover:block overflow-hidden z-50 capitalize normal-case text-xs font-semibold">
+            <a href="javascript:void(0)" onclick="alert('Vòng quay may mắn sắp mở!')" class="block px-3 py-2 hover:bg-indigo-50 border-b">Vòng Quay Robux</a>
+            <a href="javascript:void(0)" onclick="openWelcomeModal()" class="block px-3 py-2 hover:bg-indigo-50">Quy Định &amp; Bảo Hành</a>
           </div>
         </div>
+
+        <button class="bg-blue-100 hover:bg-blue-200 text-blue-600 p-1 rounded-full shadow-sm transition px-2">
+          <i class="fa-solid fa-globe text-xs"></i>
+        </button>
       </nav>
 
-      <!-- USER PROFILE / LOGIN BADGE (RIGHT SIDE) -->
-      <div class="flex items-center gap-2">
+      <!-- USER PROFILE BADGE (RIGHT) -->
+      <div class="flex items-center gap-1">
         <div id="userBadgeArea" class="relative group">
-          <button onclick="toggleUserDropdown()" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded-full border border-slate-300 font-bold text-xs transition">
-            <span class="w-6 h-6 rounded-full bg-slate-300 flex items-center justify-center text-slate-700">
-              <i class="fa-solid fa-user text-xs"></i>
+          <button onclick="toggleUserDropdown()" class="flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 px-2.5 py-1 rounded-full border border-slate-300 font-extrabold text-xs transition shadow-sm">
+            <span class="w-5 h-5 rounded-full bg-slate-800 text-white flex items-center justify-center text-[10px]">
+              <i class="fa-solid fa-user"></i>
             </span>
-            <span id="navUsername">Khách</span>
-            <span id="navBalance" class="text-blue-600">0đ</span>
-            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+            <span id="navUsername">phat123</span>
+            <span id="navBalance" class="text-blue-600 text-[11px]">881 đ</span>
+            <i class="fa-solid fa-chevron-down text-[8px] text-slate-400"></i>
           </button>
 
           <!-- Dropdown menu -->
-          <div id="userDropdown" class="absolute right-0 top-full mt-1 w-48 bg-white text-gray-800 rounded-2xl shadow-2xl border border-slate-100 hidden z-50 overflow-hidden">
+          <div id="userDropdown" class="absolute right-0 top-full mt-1 w-44 bg-white text-gray-800 rounded-xl shadow-2xl border border-slate-200 hidden z-50 overflow-hidden">
             <div id="guestMenu" class="py-1">
-              <button onclick="openAuthModal('login')" class="w-full text-left px-4 py-2.5 text-xs font-bold hover:bg-slate-50 flex items-center gap-2 text-slate-700">
+              <button onclick="openAuthModal('login')" class="w-full text-left px-3 py-2 text-xs font-bold hover:bg-slate-50 flex items-center gap-2 text-slate-700">
                 <i class="fa-solid fa-right-to-bracket text-purple-600"></i> Đăng Nhập
               </button>
-              <button onclick="openAuthModal('register')" class="w-full text-left px-4 py-2.5 text-xs font-bold hover:bg-slate-50 flex items-center gap-2 text-slate-700">
+              <button onclick="openAuthModal('register')" class="w-full text-left px-3 py-2 text-xs font-bold hover:bg-slate-50 flex items-center gap-2 text-slate-700">
                 <i class="fa-solid fa-user-plus text-emerald-600"></i> Tạo Tài Khoản
               </button>
             </div>
             <div id="loggedInMenu" class="py-1 hidden">
-              <div class="px-4 py-2 border-b bg-purple-50">
-                <p class="text-[11px] text-gray-500">Đã đăng nhập:</p>
-                <p id="menuUserFullName" class="font-bold text-purple-700 text-sm">User</p>
+              <div class="px-3 py-1.5 border-b bg-purple-50">
+                <p class="text-[10px] text-gray-500">Đã đăng nhập:</p>
+                <p id="menuUserFullName" class="font-bold text-purple-700 text-xs">phat123</p>
               </div>
-              <button onclick="requireLogin('Hồ Sơ')" class="w-full text-left px-4 py-2 text-xs hover:bg-slate-50 flex items-center gap-2">
-                <i class="fa-solid fa-id-card text-blue-500"></i> Thông Tin Tài Khoản
+              <button onclick="requireLogin('Hồ Sơ')" class="w-full text-left px-3 py-1.5 text-xs hover:bg-slate-50 flex items-center gap-2">
+                <i class="fa-solid fa-id-card text-blue-500"></i> Hồ Sơ Cá Nhân
               </button>
-              <button onclick="handleLogout()" class="w-full text-left px-4 py-2 text-xs hover:bg-red-50 text-red-600 flex items-center gap-2 font-bold border-t">
+              <button onclick="handleLogout()" class="w-full text-left px-3 py-1.5 text-xs hover:bg-red-50 text-red-600 flex items-center gap-2 font-bold border-t">
                 <i class="fa-solid fa-power-off"></i> Đăng Xuất
               </button>
             </div>
           </div>
         </div>
 
-        <!-- HAMBURGER MENU BUTTON (MOBILE / TABLET SMALL ONLY - md:hidden) -->
-        <button onclick="toggleMobileMenu()" class="md:hidden bg-slate-800 text-white p-2 rounded-lg text-lg hover:bg-slate-700 transition" aria-label="Menu Mobile">
+        <!-- HAMBURGER MENU BUTTON (MOBILE ONLY) -->
+        <button onclick="toggleMobileMenu()" class="md:hidden bg-slate-800 text-white px-2 py-1 rounded text-sm hover:bg-slate-700 transition">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
 
     <!-- MOBILE MENU DROPDOWN PANEL -->
-    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-t border-purple-900 px-4 py-3 space-y-2 text-sm font-semibold">
-      <button onclick="openWelcomeModal(); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg bg-blue-600 text-white flex items-center gap-2">
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-t border-purple-900 px-3 py-2 space-y-1.5 text-xs font-semibold">
+      <button onclick="openWelcomeModal(); toggleMobileMenu();" class="w-full text-left px-2.5 py-1.5 rounded bg-blue-600 text-white flex items-center gap-2">
         <i class="fa-solid fa-house"></i> TRANG CHỦ
       </button>
-      <button onclick="requireLogin('Lịch Sử Mua'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg bg-emerald-600 text-white flex items-center gap-2">
+      <button onclick="requireLogin('Lịch Sử Mua'); toggleMobileMenu();" class="w-full text-left px-2.5 py-1.5 rounded bg-emerald-600 text-white flex items-center gap-2">
         <i class="fa-solid fa-clock-rotate-left"></i> LỊCH SỬ MUA
       </button>
-      <button onclick="requireLogin('Hồ Sơ'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg bg-cyan-600 text-white flex items-center gap-2">
+      <button onclick="requireLogin('Hồ Sơ'); toggleMobileMenu();" class="w-full text-left px-2.5 py-1.5 rounded bg-cyan-600 text-white flex items-center gap-2">
         <i class="fa-solid fa-id-card"></i> HỒ SƠ CÁ NHÂN
       </button>
-      <button onclick="requireLogin('Nạp Tiền'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg bg-red-600 text-white flex items-center gap-2">
+      <button onclick="requireLogin('Nạp Tiền'); toggleMobileMenu();" class="w-full text-left px-2.5 py-1.5 rounded bg-red-600 text-white flex items-center gap-2">
         <i class="fa-solid fa-wallet"></i> NẠP TIỀN AUTO
       </button>
-      <button onclick="requireLogin('Dòng Tiền'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg bg-slate-700 text-white flex items-center gap-2">
+      <button onclick="requireLogin('Dòng Tiền'); toggleMobileMenu();" class="w-full text-left px-2.5 py-1.5 rounded bg-slate-700 text-white flex items-center gap-2">
         <i class="fa-solid fa-dollar-sign"></i> DÒNG TIỀN
       </button>
     </div>
   </header>
 
   <!-- ================= MAIN CONTENT AREA ================= -->
-  <main class="max-w-7xl mx-auto px-2 sm:px-4 py-6 w-full space-y-6 flex-grow">
+  <main class="max-w-7xl mx-auto px-2 sm:px-3 py-4 w-full space-y-4 flex-grow">
 
     <!-- HERO SECTION: YOUTUBE VIDEO + CARD DEPOSIT WIDGET -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
       
       <!-- LEFT: YOUTUBE SHOWCASE VIDEO (7 COLS) -->
-      <div class="lg:col-span-7 bg-slate-900 rounded-3xl overflow-hidden neon-border flex flex-col justify-between shadow-2xl">
-        <div class="p-3 sm:p-4 bg-gradient-to-r from-purple-950 via-slate-900 to-black border-b border-purple-800/50 flex items-center justify-between">
-          <div class="flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-300">
-            <span class="bg-red-600 text-white px-2 py-0.5 rounded text-[10px] uppercase animate-pulse">Hot Video</span>
+      <div class="lg:col-span-7 bg-slate-900 rounded-2xl overflow-hidden border border-purple-800 flex flex-col justify-between shadow-2xl">
+        <div class="p-2.5 sm:p-3 bg-gradient-to-r from-purple-950 via-slate-900 to-black border-b border-purple-800/50 flex items-center justify-between">
+          <div class="flex items-center gap-2 text-xs font-bold text-amber-300">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded text-[9px] uppercase animate-pulse">Hot Video</span>
             <span>1 Đêm Cày Thuê Của Một Shop "Vô Danh" Có Gì?</span>
           </div>
-          <span class="text-xs text-slate-400 font-mono hidden sm:inline">Thiên Roblox</span>
+          <span class="text-[11px] text-slate-400 font-mono hidden sm:inline">Thiên Roblox</span>
         </div>
         
         <div class="relative w-full aspect-video bg-black flex items-center justify-center">
@@ -219,55 +212,57 @@
           </iframe>
         </div>
 
-        <div class="p-3 bg-slate-950 text-slate-300 text-xs flex items-center justify-between border-t border-purple-900/40">
-          <span class="text-amber-400 font-semibold"><i class="fa-brands fa-youtube text-red-500 mr-1"></i> Xem trên YouTube</span>
-          <span class="text-slate-400">SHOP KATORI</span>
+        <div class="p-2 bg-slate-950 text-slate-300 text-xs flex items-center justify-between border-t border-purple-900/40">
+          <span class="text-amber-400 font-semibold text-[11px]"><i class="fa-brands fa-youtube text-red-500 mr-1"></i> Xem trên YouTube</span>
+          <span class="text-slate-400 text-[11px]">SHOP KATORI</span>
         </div>
       </div>
 
       <!-- RIGHT: TOP-UP CARD BOX (5 COLS) -->
-      <div class="lg:col-span-5 bg-white text-slate-900 rounded-3xl shadow-2xl p-4 sm:p-6 border-2 border-purple-300 flex flex-col justify-between">
+      <div class="lg:col-span-5 bg-white text-slate-900 rounded-2xl shadow-2xl p-4 border border-purple-200 flex flex-col justify-between">
         
-        <!-- Tabs Header -->
         <div>
-          <div class="flex items-center gap-1 border-b-2 border-purple-100 pb-3 mb-4 text-xs sm:text-sm font-bold">
-            <button class="flex-1 py-2 rounded-xl bg-purple-600 text-white shadow-md text-center flex items-center justify-center gap-1">
+          <!-- Tabs Header -->
+          <div class="flex items-center gap-1 border-b border-purple-100 pb-2.5 mb-3 text-xs font-bold">
+            <button class="flex-1 py-1.5 rounded-lg bg-indigo-400 text-white shadow-sm text-center flex items-center justify-center gap-1">
               <i class="fa-solid fa-credit-card"></i> Nạp Thẻ
             </button>
-            <button onclick="requireLogin('TOP Nạp')" class="flex-1 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-center transition flex items-center justify-center gap-1">
-              <i class="fa-solid fa-trophy text-amber-500"></i> TOP Nạp
+            <button onclick="requireLogin('TOP Nạp')" class="flex-1 py-1.5 rounded-lg bg-indigo-300 hover:bg-indigo-400 text-white text-center transition flex items-center justify-center gap-1">
+              <i class="fa-solid fa-trophy text-amber-300"></i> TOP Nạp
             </button>
-            <button onclick="requireLogin('ATM/MoMo')" class="flex-1 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-center transition flex items-center justify-center gap-1">
-              <i class="fa-solid fa-building-columns text-emerald-600"></i> Ngân Hàng
+            <button onclick="requireLogin('ATM/MoMo')" class="flex-1 py-1.5 rounded-lg bg-indigo-300 hover:bg-indigo-400 text-white text-center transition flex items-center justify-center gap-1">
+              <i class="fa-solid fa-building-columns"></i> Ngân Hàng
             </button>
           </div>
 
-          <!-- STATE 1: GUEST UNAUTHENTICATED (SHOWN WHEN NOT LOGGED IN) -->
-          <div id="depositGuestBox" class="py-8 flex flex-col items-center justify-center text-center space-y-4">
-            <div class="w-16 h-16 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-400 text-2xl shadow-inner">
+          <!-- STATE 1: GUEST UNAUTHENTICATED -->
+          <div id="depositGuestBox" class="py-6 flex flex-col items-center justify-center text-center space-y-3">
+            <div class="w-14 h-14 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-400 text-xl shadow-inner">
               <i class="fa-solid fa-user-lock"></i>
             </div>
-            <p class="text-slate-600 font-bold text-sm">Vui lòng đăng nhập để nạp thẻ</p>
-            <button onclick="openAuthModal('login')" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-extrabold px-8 py-3 rounded-2xl shadow-lg hover:shadow-purple-300 transform active:scale-95 transition">
+            <p class="text-slate-600 font-bold text-xs">Vui lòng đăng nhập để nạp thẻ</p>
+            <button onclick="openAuthModal('login')" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-extrabold px-6 py-2 rounded-xl shadow-md hover:shadow-purple-300 transform active:scale-95 transition text-xs">
               Đăng Nhập Ngay
             </button>
           </div>
 
-          <!-- STATE 2: LOGGED IN FORM (SHOWN WHEN USER LOGGED IN) -->
-          <div id="depositUserForm" class="hidden space-y-3">
-            <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1">Loại thẻ</label>
-              <select class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-purple-500">
-                <option>Viettel (Chiết khấu 0%)</option>
-                <option>Vinaphone</option>
-                <option>Mobifone</option>
-                <option>Zing Card</option>
-              </select>
-            </div>
+          <!-- STATE 2: LOGGED IN FORM -->
+          <div id="depositUserForm" class="hidden space-y-2.5">
             <div class="grid grid-cols-2 gap-2">
               <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1">Mệnh giá</label>
-                <select class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <label class="block text-[11px] font-bold text-slate-600 mb-1">Loại thẻ</label>
+                <select class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-purple-500">
+                  <option>Chọn</option>
+                  <option>Viettel</option>
+                  <option>Vinaphone</option>
+                  <option>Mobifone</option>
+                  <option>Zing</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 mb-1">Mệnh giá</label>
+                <select class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-purple-500">
+                  <option>Chọn</option>
                   <option>10.000 đ</option>
                   <option>20.000 đ</option>
                   <option>50.000 đ</option>
@@ -276,24 +271,31 @@
                   <option>500.000 đ</option>
                 </select>
               </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1">Mã Pin</label>
-                <input type="text" placeholder="Nhập mã pin" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-purple-500">
-              </div>
             </div>
+
             <div>
-              <label class="block text-xs font-bold text-slate-600 mb-1">Số Seri</label>
-              <input type="text" placeholder="Nhập số seri" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-purple-500">
+              <label class="block text-[11px] font-bold text-slate-600 mb-1">Số serial</label>
+              <input type="text" placeholder="Nhập số serial" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs focus:outline-none focus:ring-1 focus:ring-purple-500">
             </div>
-            <button onclick="alert('Thẻ đã gửi lên hệ thống phê duyệt!')" class="w-full mt-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-extrabold py-3 rounded-xl shadow-md transition">
-              NẠP THẺ NGAY
+
+            <div>
+              <label class="block text-[11px] font-bold text-slate-600 mb-1">Mã thẻ</label>
+              <input type="text" placeholder="Nhập mã thẻ" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs focus:outline-none focus:ring-1 focus:ring-purple-500">
+            </div>
+
+            <p class="text-[10px] text-amber-600 font-bold text-center mt-1">
+              ⚠️ Chọn sai mệnh giá sẽ bị mất thẻ!
+            </p>
+
+            <button onclick="alert('Thẻ đã gửi lên hệ thống phê duyệt!')" class="w-full mt-1 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-extrabold py-2.5 rounded-xl shadow transition text-xs flex items-center justify-center gap-1">
+              <i class="fa-solid fa-paper-plane text-[10px]"></i> Gửi Để Nhận: 0đ 💬
             </button>
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-slate-100 text-center">
-          <p class="text-[11px] text-slate-500 font-medium">
-            <i class="fa-solid fa-shield-halved text-emerald-500"></i> Nạp tự động 24/7 • Chiết khấu thẻ 0% • Nhận 100% tiền shop
+        <div class="mt-3 pt-2 border-t border-slate-100 text-center">
+          <p class="text-[10px] text-slate-500 font-semibold">
+            <i class="fa-solid fa-shield-halved text-emerald-500"></i> Nạp tự động 24/7 • Chiết khấu thẻ 0% • Nhận 100% tiền
           </p>
         </div>
       </div>
@@ -301,22 +303,22 @@
     </div>
 
     <!-- INFORMATION NOTICE BOXES -->
-    <div class="bg-white text-slate-800 rounded-3xl p-5 shadow-xl border-2 border-purple-200 space-y-3">
-      <div class="flex items-center gap-2 border-b border-slate-100 pb-2 text-sm font-bold">
+    <div class="bg-white text-slate-800 rounded-2xl p-4 shadow-xl border border-purple-200 space-y-2">
+      <div class="flex items-center gap-2 border-b border-slate-100 pb-1.5 text-xs font-bold">
         <span class="text-purple-600"><i class="fa-solid fa-circle-info"></i></span>
         <span>Chính Sách &amp; Quy Định:</span>
         <a href="javascript:void(0)" onclick="openWelcomeModal()" class="text-amber-600 hover:underline">Quy Định Chung</a> | 
         <a href="javascript:void(0)" onclick="openWelcomeModal()" class="text-amber-600 hover:underline">Điều Khoản &amp; Miễn Trừ Trách Nhiệm</a>
       </div>
 
-      <div class="flex items-center gap-2 border-b border-slate-100 pb-2 text-sm font-bold">
+      <div class="flex items-center gap-2 border-b border-slate-100 pb-1.5 text-xs font-bold">
         <span class="text-blue-500"><i class="fa-solid fa-headset"></i></span>
         <span>Kênh Hỗ Trợ:</span>
         <a href="https://discord.gg" target="_blank" class="text-amber-600 hover:underline">Discord ( Hỗ Trợ Chính )</a> | 
         <a href="https://facebook.com" target="_blank" class="text-amber-600 hover:underline">Facebook CSKH | (Zalo)</a>
       </div>
 
-      <div class="flex items-center gap-2 text-sm font-bold">
+      <div class="flex items-center gap-2 text-xs font-bold">
         <span class="text-emerald-600"><i class="fa-solid fa-magnifying-glass"></i></span>
         <span>Tra Cứu Giao Dịch:</span>
         <a href="javascript:void(0)" onclick="requireLogin('Tiến độ cày thuê')" class="text-amber-600 hover:underline">Tiến Độ Cày Thuê</a> | 
@@ -324,237 +326,249 @@
       </div>
     </div>
 
+    <!-- NOTIFICATION BAR BELOW VIDEO (LIKE SCREENSHOT) -->
+    <div class="bg-white rounded-xl shadow-md border border-purple-100 p-2 flex items-center justify-between text-xs font-bold">
+      <button onclick="openWelcomeModal()" class="bg-indigo-300 text-white px-3 py-1 rounded-lg text-xs flex items-center gap-1 shadow-sm">
+        <i class="fa-solid fa-bell"></i> THÔNG BÁO
+      </button>
+
+      <div class="text-red-500 font-extrabold flex items-center gap-1">
+        <span>SHOPKATORI.COM</span>
+        <span class="text-slate-700">👉 Chiết Khấu Thẻ 0% V</span>
+      </div>
+    </div>
+
     <!-- ================= 16 BLOX FRUITS PRODUCTS GRID ================= -->
-    <section id="services" class="space-y-4 pt-2">
+    <section id="services" class="space-y-3 pt-2">
       <div class="flex items-center justify-between">
-        <h2 class="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-purple-300 to-white flex items-center gap-2">
+        <h2 class="text-lg sm:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-purple-300 to-white flex items-center gap-2">
           <i class="fa-solid fa-fire text-red-500"></i> DỊCH VỤ BLOX FRUITS &amp; CÀY THUÊ HOT
         </h2>
         <span class="text-xs text-purple-400 font-semibold hidden sm:inline">Tự động 100%</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
         
         <!-- CARD 1 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Trái Vĩnh Viễn">
-            <span class="absolute top-2 right-2 bg-gradient-to-r from-amber-500 to-red-500 text-white font-extrabold text-[10px] px-2 py-0.5 rounded-md shadow">HÀNG GIFT</span>
+            <span class="absolute top-2 right-2 bg-gradient-to-r from-amber-500 to-red-500 text-white font-extrabold text-[9px] px-2 py-0.5 rounded shadow">HÀNG GIFT</span>
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Trái Vĩnh Viễn - Game Pass ( Hàng Gift ) (RT 130)</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Trái Vĩnh Viễn')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Trái Vĩnh Viễn - Game Pass ( Hàng Gift ) (RT 130)</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Trái Vĩnh Viễn')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 2 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Acc Blox Fruit">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Acc Blox Fruit Hàng Quốc Tế Không Có VNG</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Acc Blox Fruit')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Acc Blox Fruit Hàng Quốc Tế Không Có VNG</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Acc Blox Fruit')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 3 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Trái Rương">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Trái Rương ( Trade ) / Trái Skin</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Trái Rương')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Trái Rương ( Trade ) / Trái Skin</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Trái Rương')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 4 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Robux">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Robux Chính Hãng VNG / Quốc Tế</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Robux')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Robux Chính Hãng VNG / Quốc Tế</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Robux')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 5 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Máy Treo Game">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Máy Treo Game 24/24 Tiếng</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Máy Treo Game')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Máy Treo Game 24/24 Tiếng</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Máy Treo Game')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 6 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Cày Leviathan">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Leviathan - Sự Kiện Biển Sea 3 )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Cày Leviathan')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Leviathan - Sự Kiện Biển Sea 3 )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Cày Leviathan')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 7 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Thức Tỉnh V4">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Thức Tỉnh V4 - Lấy Tộc Đặc Biệt - Đổi Tộc V2 V3 )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Thức Tỉnh V4')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Thức Tỉnh V4 - Lấy Tộc Đặc Biệt - Đổi Tộc V2 V3 )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Thức Tỉnh V4')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 8 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Nhiều Tộc V4">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Nhiều Tộc V4 Trong 1 Lần Thuê )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Nhiều Tộc V4')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Nhiều Tộc V4 Trong 1 Lần Thuê )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Nhiều Tộc V4')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 9 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Beli Frag">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Beli ) ( Frag Điểm Tím ) ( Thông Thạo )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Beli & Frag')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Beli ) ( Frag Điểm Tím ) ( Thông Thạo )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Beli & Frag')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 10 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Draco Kiếm Rồng">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Tộc Draco - Kiếm Rồng - Súng Rồng v.v )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Tộc Draco')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Tộc Draco - Kiếm Rồng - Súng Rồng v.v )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Tộc Draco')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 11 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Lấy Kiếm Súng">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Lấy Kiếm - Lấy Súng - Phụ Kiện v.v )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Kiếm Súng')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Lấy Kiếm - Lấy Súng - Phụ Kiện v.v )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Kiếm Súng')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 12 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Nguyên Liệu">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Nguyên Liệu Để Nâng Cấp Đồ )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Nguyên Liệu')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Nguyên Liệu Để Nâng Cấp Đồ )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Nguyên Liệu')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 13 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Cần Câu Cá">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Cần Câu Cá )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Cần Câu Cá')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Cần Câu Cá )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Cần Câu Cá')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 14 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Thức Tỉnh Trái">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Thức Tỉnh Trái - Thay Hiệu Ứng Chiêu )</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Thức Tỉnh Trái')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Thức Tỉnh Trái - Thay Hiệu Ứng Chiêu )</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Thức Tỉnh Trái')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 15 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Cày Level">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Cày ( Level - Lv - Cấp ) Max 2800</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Cày Level')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Cày ( Level - Lv - Cấp ) Max 2800</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Cày Level')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
         </div>
 
         <!-- CARD 16 -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl neon-border card-glow text-slate-800 flex flex-col justify-between">
           <div class="relative aspect-[4/3] bg-purple-950 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&auto=format&fit=crop" class="w-full h-full object-cover" alt="Donate Sộp">
           </div>
-          <div class="p-4 text-center flex-grow flex flex-col justify-between space-y-2">
-            <h3 class="font-extrabold text-sm sm:text-base line-clamp-2">Donate Sộp Để Có Nhiều Event</h3>
-            <p class="text-emerald-600 font-bold text-xs">Sẵn Sàng</p>
-            <button onclick="requireLogin('Donate Sộp')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-2 rounded-xl text-xs transition">
+          <div class="p-3 text-center flex-grow flex flex-col justify-between space-y-2">
+            <h3 class="font-extrabold text-xs sm:text-sm line-clamp-2">Donate Sộp Để Có Nhiều Event</h3>
+            <p class="text-emerald-600 font-bold text-[11px]">Sẵn Sàng</p>
+            <button onclick="requireLogin('Donate Sộp')" class="w-full bg-purple-300 hover:bg-purple-400 text-purple-950 font-black py-1.5 rounded-lg text-xs transition">
               XEM TẤT CẢ &rarr;
             </button>
           </div>
@@ -564,33 +578,33 @@
     </section>
 
     <!-- FOOTER COMMITMENTS -->
-    <section class="bg-white text-slate-800 rounded-3xl p-6 shadow-2xl border-2 border-purple-200 space-y-4">
-      <h2 class="font-extrabold text-base sm:text-lg border-b pb-3 leading-snug">
+    <section class="bg-white text-slate-800 rounded-2xl p-5 shadow-xl border border-purple-200 space-y-3">
+      <h2 class="font-extrabold text-xs sm:text-sm border-b pb-2 leading-snug">
         <span class="text-purple-700">SHOPKATORI.COM</span> &ndash; KHÁCH HÀNG LÀ TRÊN HẾT Tự hào là điểm đến tin cậy cho người có tiền và học sinh có nhu cầu Cày Thuê game và Mua Vật Phẩm giá rẻ. Đến với chúng tôi, bạn không chỉ nhận được dịch vụ chất lượng cao, mà còn được bảo vệ quyền lợi tuyệt đối với 5 cam kết vàng:
       </h2>
-      <ul class="space-y-2 text-xs sm:text-sm font-medium text-slate-700">
+      <ul class="space-y-1.5 text-xs font-medium text-slate-700">
         <li class="flex items-start gap-2">
-          <span class="text-base">🎮</span> 
+          <span>🎮</span> 
           <span><strong>Cày Thuê &amp; Vật Phẩm Giá Rẻ:</strong> Đội ngũ chuyên nghiệp xử lý đơn hàng siêu tốc, cung cấp vật phẩm với mức giá rẻ nhất có thể.</span>
         </li>
         <li class="flex items-start gap-2">
-          <span class="text-base">🛡️</span> 
+          <span>🛡️</span> 
           <span><strong>Bảo Mật Đồ Tuyệt Đối:</strong> Cam kết bảo mật thông tin tài khoản, giữ nguyên vẹn 100% trang bị, trái và vật phẩm có sẵn trong acc của bạn.</span>
         </li>
         <li class="flex items-start gap-2">
-          <span class="text-base">💳</span> 
+          <span>💳</span> 
           <span><strong>Chính Sách Hoàn Tiền:</strong> Sẵn sàng hoàn trả 100% tiền giao dịch hoặc đền bù thỏa đáng nếu xảy ra bất kỳ sai sót hay sự cố nào từ phía shop.</span>
         </li>
         <li class="flex items-start gap-2">
-          <span class="text-base">👥</span> 
+          <span>👥</span> 
           <span><strong>Nhân Viên Hỗ Trợ Tận Tâm:</strong> Đội ngũ hỗ trợ luôn túc trực để tư vấn 24/7, giải đáp về vấn đề bạn không hiểu và xử lý mọi yêu cầu của bạn một cách nhanh nhất.</span>
         </li>
         <li class="flex items-start gap-2">
-          <span class="text-base">⚡</span> 
+          <span>⚡</span> 
           <span><strong>Hệ Thống Tự Động 24/7:</strong> Vận hành hoàn toàn tự động từ khâu nhận đơn đến hoàn thành, hoạt động xuyên đêm để phục vụ mấy ông.</span>
         </li>
       </ul>
-      <div class="pt-2 text-xs font-bold text-slate-500">
+      <div class="pt-1 text-[11px] font-bold text-slate-500">
         Điều Khoản &amp; Miễn Trừ Trách Nhiệm: <a href="javascript:void(0)" onclick="openWelcomeModal()" class="text-purple-600 underline">Ấn Vào Đây</a>
       </div>
     </section>
@@ -598,37 +612,36 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-black border-t border-purple-900/50 py-4 text-center text-xs text-slate-500">
+  <footer class="bg-black border-t border-purple-900/50 py-3 text-center text-xs text-slate-500">
     <p>© 2026 SHOP KATORI - Tất cả quyền được bảo lưu.</p>
   </footer>
 
   <!-- ================= FLOATING AUDIO PLAYER ================= -->
-  <!-- Audio element for "Trước Khi Em Tồn Tại - Thắng (Ngọt)" -->
   <audio id="bgMusic" loop preload="auto">
     <source src="https://raw.githubusercontent.com/fawazahmed0/currency-api/main/music.mp3" type="audio/mpeg">
     <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="fixed bottom-4 right-4 z-40">
-    <button id="musicToggleBtn" onclick="toggleMusicManual()" class="bg-slate-900/90 hover:bg-black text-white px-4 py-2.5 rounded-full border border-purple-500 shadow-2xl flex items-center gap-2 text-xs font-bold transition transform active:scale-95 backdrop-blur-md">
-      <span class="text-purple-400 animate-spin text-sm" id="musicSpinner"><i class="fa-solid fa-compact-disc"></i></span>
-      <span id="musicLabel">🎵 Nhạc nền: Trước Khi Em Tồn Tại</span>
-      <span id="musicStatus" class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30">BẬT</span>
+  <div class="fixed bottom-3 right-3 z-40">
+    <button id="musicToggleBtn" onclick="toggleMusicManual()" class="bg-slate-900/90 hover:bg-black text-white px-3 py-2 rounded-full border border-purple-500 shadow-2xl flex items-center gap-2 text-[11px] font-bold transition transform active:scale-95 backdrop-blur-md">
+      <span class="text-purple-400 animate-spin text-xs" id="musicSpinner"><i class="fa-solid fa-compact-disc"></i></span>
+      <span id="musicLabel">🎵 Nhạc nền</span>
+      <span id="musicStatus" class="bg-emerald-500/20 text-emerald-400 text-[9px] px-1.5 py-0.5 rounded-full border border-emerald-500/30">BẬT</span>
     </button>
   </div>
 
   <!-- ================= WELCOME POPUP MODAL (THÔNG BÁO MỚI) ================= -->
   <div id="welcomeModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <div class="bg-white text-slate-900 rounded-[32px] max-w-md w-full p-6 sm:p-8 text-center space-y-6 shadow-2xl transform transition-all border-4 border-purple-200">
+    <div class="bg-white text-slate-900 rounded-[28px] max-w-md w-full p-6 text-center space-y-5 shadow-2xl transform transition-all border-4 border-purple-200">
       
-      <div class="flex items-center justify-center gap-2 text-xl font-extrabold text-purple-700">
+      <div class="flex items-center justify-center gap-2 text-lg font-extrabold text-purple-700">
         <span class="text-purple-500"><i class="fa-solid fa-bell"></i></span>
         <span>Thông Báo Mới</span>
         <span class="text-purple-500"><i class="fa-solid fa-bell"></i></span>
       </div>
 
-      <div class="space-y-3 text-xs sm:text-sm font-extrabold leading-relaxed text-slate-800">
-        <p class="text-amber-500 text-sm sm:text-base uppercase flex items-center justify-center gap-1">
+      <div class="space-y-2.5 text-xs font-extrabold leading-relaxed text-slate-800">
+        <p class="text-amber-500 text-sm uppercase flex items-center justify-center gap-1">
           <span>🔥</span> CHÀO MỪNG ĐẾN VỚI SHOPKATORI.COM
         </p>
         <p class="text-red-600">
@@ -642,7 +655,7 @@
         </p>
       </div>
 
-      <button onclick="closeWelcomeModal()" class="w-28 bg-purple-400 hover:bg-purple-500 text-white font-extrabold py-2.5 rounded-2xl shadow-md transition transform active:scale-95 text-sm mx-auto block">
+      <button onclick="closeWelcomeModal()" class="w-24 bg-purple-400 hover:bg-purple-500 text-white font-extrabold py-2 rounded-xl shadow transition transform active:scale-95 text-xs mx-auto block">
         OK
       </button>
 
@@ -651,18 +664,18 @@
 
   <!-- ================= LOGIN / REGISTER MODAL ================= -->
   <div id="authModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-slate-100 text-slate-900 rounded-[32px] max-w-md w-full p-6 sm:p-8 space-y-5 shadow-2xl relative border-4 border-purple-300">
+    <div class="bg-slate-100 text-slate-900 rounded-[28px] max-w-md w-full p-6 space-y-4 shadow-2xl relative border-4 border-purple-300">
       
-      <button onclick="closeAuthModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 flex items-center justify-center transition">
+      <button onclick="closeAuthModal()" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 flex items-center justify-center transition text-xs">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <!-- TAB HEADERS -->
-      <div class="flex border-b border-slate-200 pb-2">
-        <button id="tabLoginBtn" onclick="switchAuthTab('login')" class="flex-1 text-center font-extrabold text-base py-1 border-b-2 border-purple-600 text-purple-700">
+      <div class="flex border-b border-slate-200 pb-1.5">
+        <button id="tabLoginBtn" onclick="switchAuthTab('login')" class="flex-1 text-center font-extrabold text-sm py-1 border-b-2 border-purple-600 text-purple-700">
           Đăng Nhập
         </button>
-        <button id="tabRegisterBtn" onclick="switchAuthTab('register')" class="flex-1 text-center font-extrabold text-base py-1 border-b-2 border-transparent text-slate-400">
+        <button id="tabRegisterBtn" onclick="switchAuthTab('register')" class="flex-1 text-center font-extrabold text-sm py-1 border-b-2 border-transparent text-slate-400">
           Tạo Tài Khoản
         </button>
       </div>
@@ -672,46 +685,41 @@
       </p>
 
       <!-- FORM -->
-      <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+      <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-3">
         
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Tài khoản</label>
+          <label class="block text-[11px] font-bold text-slate-700 mb-1">Tài khoản</label>
           <div class="relative">
-            <span class="absolute left-3.5 top-3 text-slate-400 text-sm"><i class="fa-regular fa-user"></i></span>
-            <input id="authUsername" type="text" oninput="validateUsernameLive()" required placeholder="Nhập tên tài khoản" class="w-full bg-slate-200/80 border border-slate-300 rounded-2xl pl-10 pr-4 py-2.5 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500">
+            <span class="absolute left-3 top-2.5 text-slate-400 text-xs"><i class="fa-regular fa-user"></i></span>
+            <input id="authUsername" type="text" oninput="validateUsernameLive()" required placeholder="Nhập tên tài khoản" class="w-full bg-slate-200/80 border border-slate-300 rounded-xl pl-8 pr-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500">
           </div>
-          <!-- DUPLICATE USERNAME ERROR MESSAGE -->
-          <p id="usernameErrorMsg" class="hidden text-red-600 font-bold text-[11px] mt-1 flex items-center gap-1">
+          <!-- DUPLICATE USERNAME ERROR -->
+          <p id="usernameErrorMsg" class="hidden text-red-600 font-bold text-[10px] mt-1 flex items-center gap-1">
             <i class="fa-solid fa-triangle-exclamation"></i> đã có tài khoản tên như vậy
           </p>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Mật khẩu</label>
+          <label class="block text-[11px] font-bold text-slate-700 mb-1">Mật khẩu</label>
           <div class="relative">
-            <span class="absolute left-3.5 top-3 text-slate-400 text-sm"><i class="fa-solid fa-lock"></i></span>
-            <input id="authPassword" type="password" required placeholder="Nhập mật khẩu của bạn" class="w-full bg-slate-200/80 border border-slate-300 rounded-2xl pl-10 pr-10 py-2.5 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500">
-            <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3.5 top-3 text-slate-400 hover:text-slate-600 text-sm">
+            <span class="absolute left-3 top-2.5 text-slate-400 text-xs"><i class="fa-solid fa-lock"></i></span>
+            <input id="authPassword" type="password" required placeholder="Nhập mật khẩu" class="w-full bg-slate-200/80 border border-slate-300 rounded-xl pl-8 pr-8 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500">
+            <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-xs">
               <i id="eyeIcon" class="fa-regular fa-eye-slash"></i>
             </button>
           </div>
         </div>
 
-        <div id="rememberRow" class="flex items-center gap-2 text-xs text-slate-600 font-bold">
+        <div id="rememberRow" class="flex items-center gap-2 text-[11px] text-slate-600 font-bold">
           <input type="checkbox" id="rememberMe" class="rounded text-purple-600 focus:ring-purple-500">
           <label for="rememberMe">Ghi nhớ đăng nhập</label>
         </div>
 
-        <button id="authSubmitBtn" type="submit" class="w-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-extrabold py-3 rounded-2xl shadow-lg transition transform active:scale-95 text-xs">
+        <button id="authSubmitBtn" type="submit" class="w-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-extrabold py-2.5 rounded-xl shadow transition transform active:scale-95 text-xs">
           Đăng nhập
         </button>
 
       </form>
-
-      <div class="text-center pt-2">
-        <span class="text-[11px] text-slate-400 font-semibold">Hoặc đăng nhập với</span>
-      </div>
-
     </div>
   </div>
 
@@ -720,7 +728,6 @@
     let currentAuthMode = 'login';
     let isMusicPlaying = false;
 
-    // Load user database from localStorage
     function getUsersDB() {
       return JSON.parse(localStorage.getItem('katori_users_db') || '{}');
     }
@@ -728,27 +735,24 @@
       localStorage.setItem('katori_users_db', JSON.stringify(db));
     }
 
-    // Get current logged-in user
     function getCurrentUser() {
-      return localStorage.getItem('katori_current_user');
+      return localStorage.getItem('katori_current_user') || 'phat123';
     }
 
-    // Initialize application
     window.addEventListener('DOMContentLoaded', () => {
-      // Initialize default dummy account if empty
       const db = getUsersDB();
-      if (!db['admin']) {
-        db['admin'] = { password: '123', balance: 500000 };
+      if (!db['phat123']) {
+        db['phat123'] = { password: '123', balance: 881 };
         setUsersDB(db);
+      }
+      if (!localStorage.getItem('katori_current_user')) {
+        localStorage.setItem('katori_current_user', 'phat123');
       }
 
       updateUserUI();
-
-      // Show welcome notification on load
       openWelcomeModal();
     });
 
-    // Start background music
     function startMusic() {
       const audio = document.getElementById('bgMusic');
       if (audio) {
@@ -782,16 +786,15 @@
       const spinner = document.getElementById('musicSpinner');
       if (playing) {
         label.innerText = 'BẬT';
-        label.className = 'bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30';
+        label.className = 'bg-emerald-500/20 text-emerald-400 text-[9px] px-1.5 py-0.5 rounded-full border border-emerald-500/30';
         spinner.classList.add('animate-spin');
       } else {
         label.innerText = 'TẮT';
-        label.className = 'bg-red-500/20 text-red-400 text-[10px] px-2 py-0.5 rounded-full border border-red-500/30';
+        label.className = 'bg-red-500/20 text-red-400 text-[9px] px-1.5 py-0.5 rounded-full border border-red-500/30';
         spinner.classList.remove('animate-spin');
       }
     }
 
-    // Welcome Modal
     function openWelcomeModal() {
       document.getElementById('welcomeModal').classList.remove('hidden');
     }
@@ -801,7 +804,6 @@
       startMusic();
     }
 
-    // Navigation & Login Protection
     function requireLogin(featureName) {
       const user = getCurrentUser();
       if (!user) {
@@ -811,19 +813,14 @@
       }
     }
 
-    // Mobile Menu Toggle
     function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobileMenu').classList.toggle('hidden');
     }
 
-    // User Dropdown Toggle
     function toggleUserDropdown() {
-      const dropdown = document.getElementById('userDropdown');
-      dropdown.classList.toggle('hidden');
+      document.getElementById('userDropdown').classList.toggle('hidden');
     }
 
-    // Auth Modal Logic
     function openAuthModal(mode = 'login') {
       document.getElementById('authModal').classList.remove('hidden');
       switchAuthTab(mode);
@@ -840,19 +837,18 @@
       const subtitle = document.getElementById('authSubtitle');
       const submitBtn = document.getElementById('authSubmitBtn');
       const rememberRow = document.getElementById('rememberRow');
-      const err = document.getElementById('usernameErrorMsg');
 
-      err.classList.add('hidden');
+      document.getElementById('usernameErrorMsg').classList.add('hidden');
 
       if (mode === 'login') {
-        loginBtn.className = 'flex-1 text-center font-extrabold text-base py-1 border-b-2 border-purple-600 text-purple-700';
-        regBtn.className = 'flex-1 text-center font-extrabold text-base py-1 border-b-2 border-transparent text-slate-400';
+        loginBtn.className = 'flex-1 text-center font-extrabold text-sm py-1 border-b-2 border-purple-600 text-purple-700';
+        regBtn.className = 'flex-1 text-center font-extrabold text-sm py-1 border-b-2 border-transparent text-slate-400';
         subtitle.innerText = 'Đăng nhập để tiếp tục trải nghiệm của bạn';
         submitBtn.innerText = 'Đăng nhập';
         rememberRow.classList.remove('hidden');
       } else {
-        regBtn.className = 'flex-1 text-center font-extrabold text-base py-1 border-b-2 border-purple-600 text-purple-700';
-        loginBtn.className = 'flex-1 text-center font-extrabold text-base py-1 border-b-2 border-transparent text-slate-400';
+        regBtn.className = 'flex-1 text-center font-extrabold text-sm py-1 border-b-2 border-purple-600 text-purple-700';
+        loginBtn.className = 'flex-1 text-center font-extrabold text-sm py-1 border-b-2 border-transparent text-slate-400';
         subtitle.innerText = 'Tạo tài khoản mới để bắt đầu sử dụng dịch vụ';
         submitBtn.innerText = 'Đăng ký ngay';
         rememberRow.classList.add('hidden');
@@ -873,7 +869,6 @@
       }
     }
 
-    // Live validation for duplicate username on registration
     function validateUsernameLive() {
       const usernameInput = document.getElementById('authUsername').value.trim();
       const err = document.getElementById('usernameErrorMsg');
@@ -893,7 +888,6 @@
       }
     }
 
-    // Handle Login & Register Submit
     function handleAuthSubmit(e) {
       e.preventDefault();
       const username = document.getElementById('authUsername').value.trim();
@@ -912,7 +906,6 @@
         closeAuthModal();
         updateUserUI();
       } else {
-        // Login Mode
         if (!db[username] || db[username].password !== password) {
           alert('Tài khoản hoặc mật khẩu không chính xác!');
           return;
@@ -946,7 +939,7 @@
       if (currentUser && db[currentUser]) {
         const userObj = db[currentUser];
         navUser.innerText = currentUser;
-        navBalance.innerText = `${userObj.balance.toLocaleString()}đ`;
+        navBalance.innerText = `${userObj.balance.toLocaleString()} đ`;
         menuUserFullName.innerText = currentUser;
 
         guestMenu.classList.add('hidden');
@@ -958,7 +951,7 @@
         }
       } else {
         navUser.innerText = 'Khách';
-        navBalance.innerText = '0đ';
+        navBalance.innerText = '0 đ';
 
         guestMenu.classList.remove('hidden');
         loggedInMenu.classList.add('hidden');
