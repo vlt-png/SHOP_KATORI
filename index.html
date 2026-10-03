@@ -3,748 +3,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP KATORI - Shop Acc Blox Fruits, Robux 120H & Cày Thuê Uy Tín #1</title>
+    <title>SHOPNGOTHIEN.COM - Shop Acc Game & Cày Thuê Blox Fruit</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        katori: {
-                            50: '#fef2f2',
-                            500: '#ef4444',
-                            600: '#dc2626',
-                            700: '#b91c1c',
-                            800: '#991b1b',
-                            gold: '#fbbf24',
-                        },
-                        dark: {
-                            800: '#0f172a',
-                            900: '#090d16',
-                            950: '#05070d'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Google Font: Be Vietnam Pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         body {
-            background-color: #05070d;
-            color: #f3f4f6;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #0d0e12;
+            color: #ffffff;
         }
-        .glow-red {
-            box-shadow: 0 0 25px rgba(220, 38, 38, 0.35);
+
+        /* Hiệu ứng viền Neon phát sáng cho các ô Card */
+        .neon-card {
+            background: #14161f;
+            border: 2px solid #7c3aed;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+            transition: all 0.3s ease;
         }
-        .glow-gold {
-            box-shadow: 0 0 25px rgba(251, 191, 36, 0.35);
+        .neon-card:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+            transform: translateY(-4px);
         }
-        .border-glow:hover {
-            border-color: #ef4444;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+
+        /* Nút Gradient Tím */
+        .btn-purple {
+            background: linear-gradient(90deg, #8b5cf6 0%, #a855f7 100%);
+            transition: all 0.2s ease;
         }
+        .btn-purple:hover {
+            background: linear-gradient(90deg, #7c3aed 0%, #9333ea 100%);
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+        }
+
+        /* Tùy chỉnh thanh cuộn Web */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #090d16;
+            background: #0d0e12;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1f2937;
+            background: #7c3aed;
             border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #dc2626;
         }
     </style>
 </head>
-<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="min-h-screen pb-12 relative">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-[#12131a]/95 backdrop-blur-md border-b border-gray-800 shadow-lg">
+        <div class="max-w-[1400px] mx-auto px-4 py-2.5 flex items-center justify-between gap-2 overflow-x-auto">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 flex-shrink-0">
+                <div class="bg-red-600 px-3 py-1 rounded-md font-black text-xl italic tracking-wider text-yellow-300 border border-yellow-400">
+                    NGÔ THIÊN
+                </div>
+            </a>
+
+            <!-- Menu Navigation -->
+            <nav class="flex items-center gap-2 text-xs md:text-sm font-semibold whitespace-nowrap">
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-house"></i> TRANG CHỦ
+                </a>
                 
-                <!-- Logo Shop Katori -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-red-600 via-red-500 to-amber-500 flex items-center justify-center font-black text-2xl text-white shadow-lg shadow-red-600/40 group-hover:scale-105 transition duration-300">
-                        K
-                    </div>
-                    <div>
-                        <span class="text-2xl font-black tracking-wider text-white">SHOP <span class="text-red-500">KATORI</span></span>
-                        <span class="block text-[10px] text-amber-400 tracking-widest uppercase font-extrabold">Shop Roblox & Blox Fruits #1</span>
-                    </div>
+                <div class="relative group">
+                    <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-clock-rotate-left"></i> LỊCH SỬ MUA <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
+
+                <div class="relative group">
+                    <button class="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-list-check"></i> DỊCH VỤ KHÁC <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
+
+                <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-user"></i> HỒ SƠ
                 </a>
 
-                <!-- Navigation Links -->
-                <nav class="hidden lg:flex items-center gap-1">
-                    <a href="#home" class="px-3 py-2 text-sm font-bold text-red-500 hover:bg-slate-800/80 rounded-xl transition"><i class="fa-solid fa-house mr-1.5"></i>Trang Chủ</a>
-                    <a href="#acc-store" class="px-3 py-2 text-sm font-bold text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-xl transition"><i class="fa-solid fa-gamepad mr-1.5"></i>Nick Blox Fruits</a>
-                    <a href="#cay-thue" class="px-3 py-2 text-sm font-bold text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-xl transition"><i class="fa-solid fa-fire mr-1.5"></i>Cày Thuê</a>
-                    <a href="#robux" class="px-3 py-2 text-sm font-bold text-amber-400 hover:text-amber-300 hover:bg-slate-800/80 rounded-xl transition"><i class="fa-solid fa-bolt mr-1.5"></i>Nạp Robux 120H</a>
-                    <a href="#vong-quay" class="px-3 py-2 text-sm font-bold text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-xl transition"><i class="fa-solid fa-rotate mr-1.5"></i>Vòng Quay</a>
-                    <a href="#recharge" class="px-3 py-2 text-sm font-bold text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-xl transition"><i class="fa-solid fa-wallet mr-1.5"></i>Nạp Tiền</a>
-                </nav>
+                <div class="relative group">
+                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-wallet"></i> NẠP TIỀN <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
 
-                <!-- User Account Info & Balance -->
-                <div class="flex items-center gap-3">
-                    <div class="bg-slate-900 border border-slate-700/80 px-3.5 py-1.5 rounded-xl flex items-center gap-2">
-                        <i class="fa-solid fa-coins text-amber-400 text-sm"></i>
-                        <div>
-                            <p class="text-[10px] text-slate-400 font-semibold leading-none">Ví KATORI</p>
-                            <p class="text-sm font-black text-emerald-400" id="userBalance">250,000đ</p>
-                        </div>
-                    </div>
-                    <a href="#recharge" class="px-4 py-2.5 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 text-white font-extrabold text-sm rounded-xl shadow-lg shadow-red-600/30 transition">
-                        <i class="fa-solid fa-plus-circle mr-1"></i> Nạp Tiền
-                    </a>
+                <a href="#" class="bg-slate-600 hover:bg-slate-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-dollar-sign"></i> DÒNG TIỀN
+                </a>
+
+                <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-newspaper"></i> TIN TỨC
+                </a>
+
+                <div class="relative group">
+                    <button class="bg-gray-600 hover:bg-gray-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-gear"></i> BỔ SUNG <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- User Account / Login Info -->
+            <div class="flex items-center gap-2 bg-[#1c1e2b] px-3 py-1 rounded-full border border-gray-700 flex-shrink-0">
+                <div class="w-7 h-7 rounded-full bg-gray-600 flex items-center justify-center text-gray-200">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="text-xs leading-tight">
+                    <div class="font-bold text-gray-200">Khách</div>
+                    <div class="text-yellow-400 font-extrabold">0đ</div>
                 </div>
             </div>
+
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-12" id="home">
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-[1400px] mx-auto px-4 mt-6 space-y-6">
 
-        <!-- Announcement Bar -->
-        <div class="bg-slate-900/90 border border-red-500/30 rounded-2xl p-4 flex items-center gap-4 shadow-xl relative overflow-hidden">
-            <div class="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-500 shrink-0">
-                <i class="fa-solid fa-bullhorn text-lg"></i>
-            </div>
-            <div class="overflow-hidden flex-1">
-                <p class="text-sm text-slate-200 font-medium">
-                    <span class="font-extrabold text-red-400">THÔNG BÁO SHOP KATORI:</span> Khuyến mãi +20% giá trị khi nạp qua VietQR / ATM / MoMo hôm nay! Cập nhật kho Nick Blox Fruits Max Level Godhuman + Tộc V4 + Fruit Vĩnh Viễn giá rẻ cực sốc!
-                </p>
-            </div>
-        </div>
-
-        <!-- Banner & Quick Services Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 bg-gradient-to-r from-red-950 via-dark-800 to-slate-900 border border-slate-800 rounded-3xl p-8 flex flex-col justify-center items-start shadow-2xl relative overflow-hidden">
-                <span class="text-xs font-bold tracking-widest text-amber-400 uppercase bg-amber-400/10 px-3.5 py-1 rounded-full border border-amber-400/20 mb-3">Shop Uy Tín Top #1 Việt Nam</span>
-                <h1 class="text-3xl md:text-5xl font-black leading-tight text-white mb-3">SHOP <span class="text-red-500">KATORI</span> <br>ACC BLOX FRUITS & ROBUX</h1>
-                <p class="text-slate-400 text-sm md:text-base max-w-lg mb-6">Hệ thống bán Nick Roblox tự động 100%, Dịch vụ cày thuê Blox Fruits nhanh chóng, Nạp Robux 120H giá rẻ nhất thị trường.</p>
-                <div class="flex flex-wrap gap-3">
-                    <a href="#acc-store" class="px-6 py-3 bg-red-600 hover:bg-red-500 text-white font-black text-sm rounded-xl transition shadow-lg shadow-red-600/40 flex items-center gap-2">
-                        <i class="fa-solid fa-cart-shopping"></i> Mua Nick Ngay
-                    </a>
-                    <a href="#cay-thue" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm rounded-xl border border-slate-700 transition">
-                        <i class="fa-solid fa-fire text-amber-400 mr-1"></i> Dịch Vụ Cày Thuê
-                    </a>
-                </div>
-            </div>
-
-            <!-- Commitments Banner -->
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-xl">
-                <h3 class="text-lg font-black text-white border-b border-slate-800 pb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-red-500"></i> CAM KẾT BẢO HÀNH
-                </h3>
-                <div class="space-y-4 text-xs">
-                    <div class="flex items-start gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-500 shrink-0">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-white text-sm">Giao Dịch Tự Động 24/7</p>
-                            <p class="text-slate-400">Nhận tài khoản & mật khẩu ngay lập tức sau 3 giây thanh toán.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
-                            <i class="fa-solid fa-lock"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-white text-sm">Bảo Hành Trọn Đời</p>
-                            <p class="text-slate-400">1 đổi 1 nếu tài khoản bị sai thông tin hoặc bị khóa do shop.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold text-white text-sm">Hỗ Trợ Kỹ Thuật 24/7</p>
-                            <p class="text-slate-400">Đội ngũ Admin KATORI trực Fanpage hỗ trợ tức thì.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section: Lucky Wheel Canvas -->
-        <section id="vong-quay" class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
-            <div class="text-center max-w-2xl mx-auto mb-8">
-                <span class="text-amber-400 font-black text-xs tracking-widest uppercase bg-amber-400/10 px-3.5 py-1 rounded-full border border-amber-400/20">Thử Vận May</span>
-                <h2 class="text-2xl md:text-4xl font-black text-white mt-2">VÒNG QUAY BLOX FRUITS KATORI</h2>
-                <p class="text-slate-400 text-sm mt-1">Chỉ <strong class="text-amber-400">19,000đ</strong> / lượt - Cơ hội 100% trúng Acc Level Max, Trái Mochi V2, Robux khủng!</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <!-- Wheel Canvas -->
-                <div class="flex flex-col items-center justify-center relative">
-                    <div class="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] flex items-center justify-center">
-                        <div class="absolute -top-3 z-20 text-red-500 drop-shadow-md text-3xl">
-                            <i class="fa-solid fa-caret-down"></i>
-                        </div>
-                        <canvas id="wheelCanvas" width="380" height="380" class="rounded-full shadow-2xl border-4 border-amber-500/40"></canvas>
-                        <button onclick="spinWheel()" id="spinBtn" class="absolute z-30 w-20 h-20 bg-gradient-to-tr from-amber-500 via-amber-400 to-amber-300 border-4 border-slate-950 rounded-full font-black text-slate-950 shadow-xl hover:scale-105 active:scale-95 transition flex items-center justify-center uppercase text-sm">
-                            QUAY
+        <!-- TOP SECTION: HERO VIDEO & TOP UP BOX -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- LEFT: VIDEO BANNER & LINKS -->
+            <div class="lg:col-span-7 bg-[#14161f] border border-purple-900/60 rounded-xl p-4 flex flex-col justify-between shadow-xl">
+                <!-- Video Player Container -->
+                <div class="relative rounded-lg overflow-hidden border border-purple-500/30 aspect-video group">
+                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <button onclick="alert('Đang mở Video YouTube...')" class="w-16 h-16 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center text-2xl shadow-lg transform hover:scale-110 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
                         </button>
                     </div>
-                </div>
-
-                <!-- Live Winners Stream -->
-                <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-base font-extrabold text-white mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-trophy text-amber-400"></i> Lịch Sử Trúng Thưởng Vòng Quay
-                        </h3>
-                        <div class="space-y-3" id="liveWinners">
-                            <!-- Populated via JS -->
-                        </div>
+                    <div class="absolute top-3 left-3 bg-black/70 px-3 py-1 rounded text-xs font-bold flex items-center gap-2">
+                        <span class="text-red-500 font-extrabold">1 Đêm Cày Thuê Của Một Shop "Vô Danh" Có Gì?</span>
                     </div>
-                    <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 text-center">
-                        <i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Đã có hơn <strong class="text-white">12,500+</strong> lượt quay trúng quà tuần này!
+                    <a href="#" class="absolute bottom-3 right-3 bg-black/80 hover:bg-red-600 text-white text-xs px-3 py-1.5 rounded flex items-center gap-1.5 transition">
+                        Xem trên <i class="fa-brands fa-youtube text-red-500 text-sm"></i> YouTube
+                    </a>
+                </div>
+
+                <!-- Footer Links inside Left Box -->
+                <div class="mt-4 pt-3 border-t border-gray-800 text-xs space-y-2">
+                    <div class="flex flex-wrap items-center gap-2 text-gray-300">
+                        <i class="fa-solid fa-file-contract text-yellow-500"></i>
+                        <span class="font-bold text-gray-200">Chính Sách & Quy Định:</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Quy Định Chung</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Điều Khoản & Miễn Trừ Trách Nhiệm</a>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2 text-gray-300">
+                        <i class="fa-solid fa-headset text-blue-400"></i>
+                        <span class="font-bold text-gray-200">Kênh Hỗ Trợ:</span>
+                        <a href="#" class="text-indigo-400 hover:underline font-semibold">Discord ( Hỗ Trợ Chính )</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Facebook CSKH</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">(Zalo)</a>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2 text-gray-300">
+                        <i class="fa-solid fa-magnifying-glass text-cyan-400"></i>
+                        <span class="font-bold text-gray-200">Tra Cứu Giao Dịch:</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Tiến Độ Cày Thuê</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Lịch Sử Mua Acc / Game Pass</a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Section: Acc Blox Fruits Catalog -->
-        <section id="acc-store" class="space-y-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
-                <div>
-                    <h2 class="text-2xl md:text-3xl font-black text-white">DANH MỤC NICK BLOX FRUITS</h2>
-                    <p class="text-slate-400 text-sm">Chọn tài khoản theo nhu cầu giá từ học sinh tới cao cấp</p>
-                </div>
-                <!-- Filter Tabs -->
-                <div class="flex flex-wrap gap-2" id="filterTabs">
-                    <button onclick="filterGame('all')" class="category-btn active px-4 py-2 text-xs font-bold rounded-xl bg-red-600 text-white transition">Tất Cả</button>
-                    <button onclick="filterGame('godhuman')" class="category-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-800 text-slate-300 hover:text-white transition">Godhuman + CDK</button>
-                    <button onclick="filterGame('toc-v4')" class="category-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-800 text-slate-300 hover:text-white transition">Tộc V4 Full Gear</button>
-                    <button onclick="filterGame('fruit-vv')" class="category-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-800 text-slate-300 hover:text-white transition">Trái Vĩnh Viễn</button>
-                    <button onclick="filterGame('random')" class="category-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-800 text-slate-300 hover:text-white transition">Random 20k</button>
-                </div>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productsGrid">
-                <!-- Populated via JS -->
-            </div>
-        </section>
-
-        <!-- Section: Cày Thuê Blox Fruits -->
-        <section id="cay-thue" class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
-            <div class="text-center max-w-2xl mx-auto mb-8">
-                <span class="text-red-500 font-extrabold text-xs tracking-widest uppercase bg-red-500/10 px-3.5 py-1 rounded-full border border-red-500/20">Dịch Vụ Siêu Tốc</span>
-                <h2 class="text-2xl md:text-3xl font-black text-white mt-2">CÀY THUÊ BLOX FRUITS KATORI</h2>
-                <p class="text-slate-400 text-sm mt-1">Cày cấp, cày Beli, lấy Godhuman, Thức tỉnh Trái Mochi V2 siêu tốc trong 24h</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Service 1 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between border-glow transition">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-500 text-xl font-bold mb-4">
-                            <i class="fa-solid fa-angles-up"></i>
-                        </div>
-                        <h3 class="text-lg font-extrabold text-white mb-2">Cày Level Max (2550)</h3>
-                        <p class="text-xs text-slate-400 mb-4">Cày cấp độ siêu tốc bằng Script/Hand làm sạch 100%, bảo đảm không ban nick.</p>
-                        <p class="text-xl font-black text-red-500 mb-4">30,000đ <span class="text-xs font-normal text-slate-400">/ 1000 Level</span></p>
-                    </div>
-                    <button onclick="openCayThueModal('Cày Level Max')" class="w-full py-2.5 bg-red-600 hover:bg-red-500 font-extrabold text-white text-xs rounded-xl transition">
-                        Đặt Cày Ngay
+            <!-- RIGHT: TAB TOP UP CARD -->
+            <div class="lg:col-span-5 bg-[#14161f] border border-purple-900/60 rounded-xl overflow-hidden flex flex-col shadow-xl">
+                <!-- Tab Headers -->
+                <div class="flex border-b border-gray-800 bg-[#1a1c28]">
+                    <button id="tab1" onclick="switchTab('napthe')" class="flex-1 py-3 text-center text-sm font-bold text-purple-400 border-b-2 border-purple-500 bg-[#14161f] flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-credit-card"></i> Nạp Thẻ
+                    </button>
+                    <button id="tab2" onclick="switchTab('topnap')" class="flex-1 py-3 text-center text-sm font-bold text-gray-400 hover:text-white flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-trophy"></i> TOP Nạp
+                    </button>
+                    <button id="tab3" onclick="switchTab('nganhang')" class="flex-1 py-3 text-center text-sm font-bold text-gray-400 hover:text-white flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-building-columns"></i> Ngân Hàng
                     </button>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between border-glow transition">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-xl font-bold mb-4">
-                            <i class="fa-solid fa-hand-fist"></i>
-                        </div>
-                        <h3 class="text-lg font-extrabold text-white mb-2">Lấy Melee Godhuman</h3>
-                        <p class="text-xs text-slate-400 mb-4">Cày đủ 400 Mastery 5 võ cũ & farm đủ nguyên liệu chế tạo Godhuman.</p>
-                        <p class="text-xl font-black text-amber-400 mb-4">70,000đ <span class="text-xs font-normal text-slate-400">/ Trọn gói</span></p>
+                <!-- Tab Content Area -->
+                <div class="p-8 flex-1 flex flex-col items-center justify-center text-center">
+                    <div class="w-16 h-16 rounded-full border-2 border-gray-700 flex items-center justify-center text-gray-500 text-3xl mb-4">
+                        <i class="fa-solid fa-user"></i>
                     </div>
-                    <button onclick="openCayThueModal('Lấy Melee Godhuman')" class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 font-extrabold text-slate-950 text-xs rounded-xl transition">
-                        Đặt Cày Ngay
-                    </button>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between border-glow transition">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xl font-bold mb-4">
-                            <i class="fa-solid fa-dna"></i>
-                        </div>
-                        <h3 class="text-lg font-extrabold text-white mb-2">Up Tộc V4 Full Gear</h3>
-                        <p class="text-xs text-slate-400 mb-4">Hỗ trợ đi gạt cần gạt, tìm Đảo Bánh & đi Trial Full bánh răng Gear 100%.</p>
-                        <p class="text-xl font-black text-emerald-400 mb-4">120,000đ <span class="text-xs font-normal text-slate-400">/ Full Gear</span></p>
-                    </div>
-                    <button onclick="openCayThueModal('Up Tộc V4 Full Gear')" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 font-extrabold text-white text-xs rounded-xl transition">
-                        Đặt Cày Ngay
+                    <p class="text-gray-300 font-semibold mb-5">Vui lòng đăng nhập để nạp thẻ</p>
+                    <button class="btn-purple text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-md">
+                        Đăng Nhập
                     </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Section: Top-up Section (Auto Banking / Card) -->
-        <section id="recharge" class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
-            <div class="text-center max-w-2xl mx-auto mb-8">
-                <span class="text-emerald-400 font-black text-xs tracking-widest uppercase bg-emerald-400/10 px-3.5 py-1 rounded-full border border-emerald-400/20">Thanh Toán Tự Động</span>
-                <h2 class="text-2xl md:text-3xl font-black text-white mt-2">NẠP TIỀN VÀO TÀI KHOẢN KATORI</h2>
-                <p class="text-slate-400 text-sm mt-1">Hệ thống xử lý nạp tiền tự động trong 10 giây</p>
+        </div>
+
+        <!-- TICKER ANNOUNCEMENT BAR -->
+        <div class="bg-[#14161f] border border-purple-900/60 rounded-xl p-2.5 flex items-center justify-between gap-4 shadow-lg">
+            <div class="flex items-center gap-3 overflow-hidden">
+                <span class="bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 flex-shrink-0">
+                    <i class="fa-solid fa-bell"></i> THÔNG BÁO
+                </span>
+                <div class="truncate text-xs md:text-sm font-extrabold text-red-500 tracking-wide">
+                    SHOPNGOTHIEN.COM <span class="text-gray-300 font-semibold">— Chiết Khấu Thẻ 0% Và Nạp Bank Nhận 20% Trị Giá</span>
+                </div>
             </div>
+            
+            <button onclick="toggleMusic()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 flex-shrink-0 border border-gray-700">
+                <i class="fa-solid fa-music text-purple-400" id="music-icon"></i> Nhạc nền
+            </button>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card Deposit Form -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 space-y-4">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-credit-card text-red-500"></i> Nạp Thẻ Cào Di Động
+        <!-- PRODUCT / SERVICE CARDS GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            <!-- Card 1 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/3b0764/ffffff?text=TRAI+VINH+VIEN" alt="Trái Vĩnh Viễn" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Trái Vĩnh Viễn - Game Pass ( Hàng Gift ) (RT 130)
                     </h3>
-                    <form onsubmit="handleTopupCard(event)" class="space-y-3">
-                        <div>
-                            <label class="block text-xs text-slate-400 font-semibold mb-1">Loại Thẻ</label>
-                            <select id="cardType" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
-                                <option value="VIETTEL">Viettel (+100% Giá Trị)</option>
-                                <option value="VINAPHONE">Vinaphone</option>
-                                <option value="MOBIFONE">Mobifone</option>
-                                <option value="ZING">Thẻ Zing</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs text-slate-400 font-semibold mb-1">Mệnh Giá</label>
-                            <select id="cardValue" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
-                                <option value="10000">10,000đ</option>
-                                <option value="20000">20,000đ</option>
-                                <option value="50000">50,000đ</option>
-                                <option value="100000" selected>100,000đ</option>
-                                <option value="200000">200,000đ</option>
-                                <option value="500000">500,000đ</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs text-slate-400 font-semibold mb-1">Mã Mã Thẻ (PIN)</label>
-                            <input type="text" id="cardPin" required placeholder="Nhập mã thẻ cào..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-slate-400 font-semibold mb-1">Số Seri</label>
-                            <input type="text" id="cardSeri" required placeholder="Nhập số seri..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
-                        </div>
-                        <button type="submit" class="w-full py-3 bg-red-600 hover:bg-red-500 font-extrabold text-white rounded-xl transition shadow-lg shadow-red-600/30">
-                            Nạp Thẻ Ngay
-                        </button>
-                    </form>
-                </div>
-
-                <!-- VietQR Banking Form -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between space-y-4">
-                    <div>
-                        <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-3">
-                            <i class="fa-solid fa-qrcode text-emerald-400"></i> Chuyển Khoản Ngân Hàng / MoMo (+20%)
-                        </h3>
-                        <p class="text-xs text-slate-400 mb-4">Quét mã QR bằng App Ngân Hàng hoặc MoMo, tiền tự động cộng trong 10 giây!</p>
-
-                        <div class="flex items-center justify-center p-4 bg-white rounded-xl w-48 h-48 mx-auto shadow-lg mb-4">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=SHOPKATORI_250000" alt="VietQR Katori" class="w-full h-full object-contain">
-                        </div>
-
-                        <div class="bg-slate-900 p-3 rounded-xl space-y-2 text-xs border border-slate-800">
-                            <div class="flex justify-between border-b border-slate-800 pb-1.5">
-                                <span class="text-slate-400">Ngân hàng:</span>
-                                <span class="font-bold text-white">MB BANK (Ngân Hàng Quân Đội)</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-800 pb-1.5">
-                                <span class="text-slate-400">Số tài khoản:</span>
-                                <span class="font-bold text-emerald-400">0987654321</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-800 pb-1.5">
-                                <span class="text-slate-400">Chủ tài khoản:</span>
-                                <span class="font-bold text-white">SHOP KATORI OFFICIAL</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-slate-400">Nội dung nạp:</span>
-                                <span class="font-bold text-amber-400">KATORI 8899</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Section: Transaction History -->
-        <section class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
-            <h2 class="text-xl font-extrabold text-white mb-4 flex items-center gap-2">
-                <i class="fa-solid fa-receipt text-red-500"></i> Lịch Sử Giao Dịch Của Bạn
+            <!-- Card 2 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/1e1b4b/ffffff?text=ACC+BLOX+FRUITS" alt="Acc Blox Fruit" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Acc Blox Fruit Hàng Quốc Tế Không Có VNG
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/4c1d95/ffffff?text=TRAI+RUONG+SKIN" alt="Trái Rương Skin" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Trái Rương ( Trade ) / Trái Skin
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/0f172a/ffffff?text=ROBUX+CHINH+HANG" alt="Robux Chính Hãng" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Robux Chính Hãng VNG / Quốc Tế
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/78350f/ffffff?text=MAY+TREO+GAME" alt="Máy Treo Game" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        MÁY TREO GAME 24/24 TIẾNG
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/1e3a8a/ffffff?text=LEVIATHAN+SEA+3" alt="Cày Leviathan" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Leviathan - Sự Kiện Biển Sea 3 )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/581c87/ffffff?text=THUC+TINH+V4" alt="Cày Thức Tỉnh V4" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Thức Tỉnh V4 - Lấy Tộc Đặc Biệt - Đổi Tộc V2 V3 )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/831843/ffffff?text=BELI+FRAG+THONG+THAO" alt="Cày Beli Frag" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Beli ) ( Frag Điểm Tím ) ( Thông Thạo )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/701a75/ffffff?text=TOC+DRACO+KIEM+RONG" alt="Cày Draco" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Tộc Draco - Kiếm Rồng - Súng Rồng v.v )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/365314/ffffff?text=LAY+KIEM+SUNG+PHU+KIEN" alt="Lấy Kiếm Súng" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Lấy Kiếm - Lấy Súng - Phụ Kiện v.v )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/14532d/ffffff?text=NGUYEN+LIEU+NANG+CAP" alt="Cày Nguyên Liệu" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Nguyên Liệu Để Nâng Cấp Đồ )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/155e75/ffffff?text=CAN+CAU+CA" alt="Cày Cần Câu Cá" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Cần Câu Cá )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 13 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/1e293b/ffffff?text=LEVEL+MAX+2800" alt="Cày Level MAX" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Cày ( Level - Lv - Cấp )
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 14 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/881337/ffffff?text=DONATE+EVENT" alt="Donate Sộp" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Donate Sộp Để Có Nhiều Event
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COMMITMENT & FOOTER SECTION -->
+        <div class="bg-[#14161f] border border-purple-900/60 rounded-xl p-6 text-xs leading-relaxed space-y-3 relative shadow-xl">
+            <h2 class="font-extrabold text-sm text-gray-100">
+                <span class="text-purple-400 font-black">SHOPNGOTHIEN.COM</span> – KHÁCH HÀNG LÀ TRÊN HẾT Tự hào là điểm đến tin cậy cho người có tiền và học sinh có nhu cầu Cày Thuê game và Mua Vật Phẩm giá rẻ. Đến với chúng tôi, bạn không chỉ nhận được dịch vụ chất lượng cao, mà còn được bảo vệ quyền lợi tuyệt đối với 5 cam kết vàng:
             </h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs md:text-sm text-slate-300">
-                    <thead class="bg-slate-950 text-slate-400 uppercase text-[11px] font-extrabold">
-                        <tr>
-                            <th class="px-4 py-3 rounded-l-xl">Thời Gian</th>
-                            <th class="px-4 py-3">Loại Dịch Vụ</th>
-                            <th class="px-4 py-3">Chi Tiết</th>
-                            <th class="px-4 py-3">Số Tiền</th>
-                            <th class="px-4 py-3 rounded-r-xl">Trạng Thái</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-800/80" id="historyList">
-                        <tr>
-                            <td class="px-4 py-3 text-slate-400">03/10/2026 14:15</td>
-                            <td class="px-4 py-3 font-semibold text-white">Mua Acc Blox Fruits</td>
-                            <td class="px-4 py-3 text-slate-300">Godhuman + CDK + Fruit Mochi V2</td>
-                            <td class="px-4 py-3 font-bold text-red-400">-150,000đ</td>
-                            <td class="px-4 py-3"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Thành công</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <ul class="space-y-2 text-gray-300">
+                <li class="flex items-start gap-2">
+                    <span class="text-base">🎮</span>
+                    <div><strong class="text-white">Cày Thuê & Vật Phẩm Giá Rẻ:</strong> Đội ngũ chuyên nghiệp xử lý đơn hàng siêu tốc, cung cấp vật phẩm với mức giá rẻ nhất có thể.</div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-base">🛡️</span>
+                    <div><strong class="text-white">Bảo Mật Đồ Tuyệt Đối:</strong> Cam kết bảo mật thông tin tài khoản, giữ nguyên vẹn 100% trang bị, trái và vật phẩm có sẵn trong acc của bạn.</div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-base">💳</span>
+                    <div><strong class="text-white">Chính Sách Hoàn Tiền:</strong> Sẵn sàng hoàn trả 100% tiền giao dịch hoặc đền bù thỏa đáng nếu xảy ra bất kỳ sai sót hay sự cố nào từ phía shop.</div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-base">🧑‍💼</span>
+                    <div><strong class="text-white">Nhân Viên Hỗ Trợ Tận Tâm:</strong> Đội ngũ hỗ trợ luôn túc trực để tư vấn 24/7, giải đáp về vấn đề bạn không hiểu và xử lý mọi yêu cầu của bạn một cách nhanh nhất.</div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-base">⚡</span>
+                    <div><strong class="text-white">Hệ Thống Tự Động 24/7:</strong> Vận hành hoàn toàn tự động từ khâu nhận đơn đến hoàn thành, hoạt động xuyên đêm để phục vụ mấy ông.</div>
+                </li>
+            </ul>
+
+            <div class="pt-2 text-gray-400">
+                Điều Khoản & Miễn Trừ Trách Nhiệm: <a href="#" class="text-yellow-400 font-bold hover:underline">Ấn Vào Đây</a>
             </div>
-        </section>
+
+            <div class="text-right font-extrabold text-gray-400 pt-4">
+                Ký Tên
+            </div>
+        </div>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white font-black">K</div>
-                <p>© 2026 <strong class="text-white">SHOP KATORI</strong>. Hệ thống Shop Roblox chính chủ. All Rights Reserved.</p>
-            </div>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-red-400 transition">Điều khoản sử dụng</a>
-                <a href="#" class="hover:text-red-400 transition">Chính sách bảo mật</a>
-                <a href="#" class="hover:text-red-400 transition">Liên hệ Fanpage</a>
-            </div>
-        </div>
-    </footer>
+    <!-- FLOATING BUTTON: BACK TO TOP -->
+    <button onclick="scrollToTop()" class="fixed bottom-6 right-6 w-11 h-11 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full flex items-center justify-center shadow-2xl z-50 border border-indigo-400 transition">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-    <!-- Purchase Account Modal -->
-    <div id="buyModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
-        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-md p-6 relative shadow-2xl">
-            <button onclick="closeModal('buyModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            <h3 class="text-xl font-black text-white mb-1" id="modalAccTitle">Xác Nhận Mua Tài Khoản</h3>
-            <p class="text-xs text-slate-400 mb-4" id="modalAccCode">Mã tài khoản: #ACC001</p>
+    <!-- AUDIO PLAYER HIDDEN FOR BACKGROUND MUSIC -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
 
-            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 mb-4 space-y-2 text-xs">
-                <div class="flex justify-between">
-                    <span class="text-slate-400">Giá bán:</span>
-                    <span class="font-extrabold text-red-500 text-sm" id="modalAccPrice">120,000đ</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-400">Số dư hiện tại:</span>
-                    <span class="font-extrabold text-emerald-400" id="modalUserBalance">250,000đ</span>
-                </div>
-            </div>
-
-            <div id="purchaseResult" class="hidden bg-emerald-950/80 border border-emerald-500/50 rounded-xl p-3 mb-4 text-xs text-emerald-200">
-                <p class="font-extrabold mb-1"><i class="fa-solid fa-circle-check text-emerald-400"></i> Mua Thành Công! Thông Tin Nick:</p>
-                <div class="bg-slate-950 p-2.5 rounded-lg space-y-1 font-mono text-[11px] text-slate-200 select-all border border-slate-800">
-                    <p>Tài khoản: <span class="text-amber-300" id="accUser">katori_blox_99</span></p>
-                    <p>Mật khẩu: <span class="text-amber-300" id="accPass">KatoriPass2026#</span></p>
-                </div>
-            </div>
-
-            <div class="flex gap-3">
-                <button onclick="confirmPurchase()" id="confirmBuyBtn" class="flex-1 py-3 bg-red-600 hover:bg-red-500 font-extrabold text-white text-sm rounded-xl transition">
-                    Xác Nhận Thanh Toán
-                </button>
-                <button onclick="closeModal('buyModal')" class="py-3 px-4 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-bold rounded-xl">
-                    Hủy
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cày Thuê Modal -->
-    <div id="cayThueModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
-        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-md p-6 relative shadow-2xl">
-            <button onclick="closeModal('cayThueModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            <h3 class="text-xl font-black text-white mb-1" id="cayThueTitle">Đặt Cày Thuê Blox Fruits</h3>
-            <p class="text-xs text-slate-400 mb-4">Vui lòng điền tài khoản Roblox của bạn để Admin xử lý</p>
-
-            <form onsubmit="handleCayThueSubmit(event)" class="space-y-3 text-xs">
-                <div>
-                    <label class="block text-slate-400 font-bold mb-1">Tài Khoản Roblox (Username)</label>
-                    <input type="text" required placeholder="Nhập tên tài khoản..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-red-500">
-                </div>
-                <div>
-                    <label class="block text-slate-400 font-bold mb-1">Mật Khẩu Roblox (Password)</label>
-                    <input type="password" required placeholder="Nhập mật khẩu..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-red-500">
-                </div>
-                <div>
-                    <label class="block text-slate-400 font-bold mb-1">Ghi Chú Cho Admin (Mã 2FA nếu có)</label>
-                    <textarea placeholder="Nhập ghi chú thêm..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-red-500 h-20"></textarea>
-                </div>
-                <button type="submit" class="w-full py-3 bg-red-600 hover:bg-red-500 font-extrabold text-white text-sm rounded-xl transition">
-                    Xác Nhận Đặt Cày
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- JavaScript Logic -->
+    <!-- JAVASCRIPT INTERACTIONS -->
     <script>
-        // User State
-        let userBalance = 250000;
-        let selectedProduct = null;
-
-        // Products Data
-        const products = [
-            { id: 101, category: 'godhuman', title: 'Acc Blox Fruits Level Max 2550 + Godhuman + Cursed Dual Katana (CDK)', price: 120000, img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80', badge: 'Godhuman' },
-            { id: 102, category: 'toc-v4', title: 'Acc Blox Fruits Tộc V4 Full Gear + Trái Mochi V2 Thức Tỉnh Full Chiêu', price: 280000, img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80', badge: 'Tộc V4' },
-            { id: 103, category: 'fruit-vv', title: 'Acc Blox Fruits Trái Dragon Vĩnh Viễn + Melee Godhuman + Song Kiếm', price: 450000, img: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&q=80', badge: 'Trái VV' },
-            { id: 104, category: 'godhuman', title: 'Acc Blox Fruits Level Max + Melee Sanguine Art + Kiếm Soul Guitar', price: 180000, img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&q=80', badge: 'Sanguine' },
-            { id: 105, category: 'random', title: 'Nick Random Blox Fruits VIP - Cơ Hội Trúng Acc Level Max 2550', price: 20000, img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&q=80', badge: 'Random 20k' },
-            { id: 106, category: 'random', title: 'Nick Random Siêu Cấp - Trúng Acc Tộc V4 Full Gear Hoặc Trái Mochi V2', price: 50000, img: 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=500&q=80', badge: 'Random 50k' },
-            { id: 107, category: 'toc-v4', title: 'Acc Blox Fruits Tộc Cyborg V4 Full Gear + 10 Triệu Beli', price: 220000, img: 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500&q=80', badge: 'Tộc Cyborg' },
-            { id: 108, category: 'fruit-vv', title: 'Acc Blox Fruits Trái Portal Vĩnh Viễn + Buddha Vĩnh Viễn Farm Cực Nhanh', price: 350000, img: 'https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=500&q=80', badge: 'Portal VV' },
-        ];
-
-        // Render Product Cards
-        function renderProducts(filter = 'all') {
-            const container = document.getElementById('productsGrid');
-            container.innerHTML = '';
-
-            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
-
-            filtered.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'bg-slate-900 border border-slate-800 hover:border-red-500/60 rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between';
-                card.innerHTML = `
-                    <div>
-                        <div class="relative h-44 overflow-hidden">
-                            <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                            <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
-                                ${item.badge}
-                            </span>
-                            <span class="absolute bottom-3 right-3 bg-slate-950/90 text-amber-400 text-xs font-black px-2 py-0.5 rounded border border-amber-400/30">
-                                Mã: #${item.id}
-                            </span>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-extrabold text-slate-100 text-sm line-clamp-2 h-10 mb-2">${item.title}</h3>
-                            <div class="flex items-center gap-2 text-xs text-slate-400 mb-3">
-                                <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i>Đổi pass 100%</span>
-                                <span><i class="fa-solid fa-bolt text-amber-400 mr-1"></i>Tự động</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 pt-0 flex items-center justify-between border-t border-slate-800/80 mt-2">
-                        <div>
-                            <p class="text-[10px] text-slate-400 font-medium">Giá bán</p>
-                            <p class="text-base font-black text-red-500">${item.price.toLocaleString('vi-VN')}đ</p>
-                        </div>
-                        <button onclick="openBuyModal(${item.id})" class="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 text-white text-xs font-extrabold rounded-xl shadow-lg shadow-red-600/30 transition">
-                            Mua Ngay
-                        </button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Filter Game Category
-        function filterGame(category) {
-            document.querySelectorAll('#filterTabs button').forEach(btn => {
-                btn.className = 'category-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-800 text-slate-300 hover:text-white transition';
-            });
-            event.target.className = 'category-btn active px-4 py-2 text-xs font-bold rounded-xl bg-red-600 text-white transition';
-            renderProducts(category);
-        }
-
-        // Buy Modal Logic
-        function openBuyModal(productId) {
-            selectedProduct = products.find(p => p.id === productId);
-            if (!selectedProduct) return;
-
-            document.getElementById('modalAccTitle').innerText = selectedProduct.title;
-            document.getElementById('modalAccCode').innerText = `Mã tài khoản: #${selectedProduct.id}`;
-            document.getElementById('modalAccPrice').innerText = `${selectedProduct.price.toLocaleString('vi-VN')}đ`;
-            document.getElementById('modalUserBalance').innerText = `${userBalance.toLocaleString('vi-VN')}đ`;
-            document.getElementById('purchaseResult').classList.add('hidden');
-            document.getElementById('confirmBuyBtn').style.display = 'block';
-
-            document.getElementById('buyModal').classList.remove('hidden');
-        }
-
-        function openCayThueModal(serviceName) {
-            document.getElementById('cayThueTitle').innerText = `Đặt Cày Thuê: ${serviceName}`;
-            document.getElementById('cayThueModal').classList.remove('hidden');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-        }
-
-        function confirmPurchase() {
-            if (!selectedProduct) return;
-
-            if (userBalance < selectedProduct.price) {
-                alert('Số dư Ví KATORI không đủ! Vui lòng nạp thêm tiền.');
-                return;
-            }
-
-            userBalance -= selectedProduct.price;
-            document.getElementById('userBalance').innerText = `${userBalance.toLocaleString('vi-VN')}đ`;
-
-            document.getElementById('purchaseResult').classList.remove('hidden');
-            document.getElementById('confirmBuyBtn').style.display = 'none';
-
-            // Insert to history
-            const historyList = document.getElementById('historyList');
-            const now = new Date().toLocaleString('vi-VN');
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td class="px-4 py-3 text-slate-400">${now}</td>
-                <td class="px-4 py-3 font-semibold text-white">Mua Acc Blox Fruits</td>
-                <td class="px-4 py-3 text-slate-300">${selectedProduct.title}</td>
-                <td class="px-4 py-3 font-bold text-red-400">-${selectedProduct.price.toLocaleString('vi-VN')}đ</td>
-                <td class="px-4 py-3"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Thành công</span></td>
-            `;
-            historyList.insertBefore(row, historyList.firstChild);
-        }
-
-        function handleCayThueSubmit(e) {
-            e.preventDefault();
-            alert('Đặt đơn Cày Thuê thành công! Admin KATORI sẽ bắt đầu xử lý đơn của bạn trong vòng 15-30 phút.');
-            closeModal('cayThueModal');
-        }
-
-        // Topup Card Form
-        function handleTopupCard(e) {
-            e.preventDefault();
-            const val = parseInt(document.getElementById('cardValue').value);
-            userBalance += val;
-            document.getElementById('userBalance').innerText = `${userBalance.toLocaleString('vi-VN')}đ`;
-            alert(`Nạp thẻ cào thành công! Đã cộng ${val.toLocaleString('vi-VN')}đ vào tài khoản KATORI.`);
-
-            const historyList = document.getElementById('historyList');
-            const now = new Date().toLocaleString('vi-VN');
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td class="px-4 py-3 text-slate-400">${now}</td>
-                <td class="px-4 py-3 font-semibold text-white">Nạp Thẻ ${document.getElementById('cardType').value}</td>
-                <td class="px-4 py-3 text-slate-300">Mã Seri: ${document.getElementById('cardSeri').value}</td>
-                <td class="px-4 py-3 font-bold text-emerald-400">+${val.toLocaleString('vi-VN')}đ</td>
-                <td class="px-4 py-3"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Thành công</span></td>
-            `;
-            historyList.insertBefore(row, historyList.firstChild);
-
-            document.getElementById('cardPin').value = '';
-            document.getElementById('cardSeri').value = '';
-        }
-
-        // Lucky Wheel Canvas
-        const canvas = document.getElementById('wheelCanvas');
-        const ctx = canvas.getContext('2d');
-        const prizes = [
-            'Acc Level Max 2550', '500 Robux', 'Chúc May Mắn', 
-            'Acc Mochi V2', 'Trái Portal VV', '1,000 Robux', 'Acc Tộc V4', 'Thẻ 500k'
-        ];
-        const colors = ['#dc2626', '#0f172a', '#ef4444', '#1e293b', '#b91c1c', '#334155', '#991b1b', '#1e1b4b'];
-
-        let currentAngle = 0;
-        let isSpinning = false;
-
-        function drawWheel() {
-            const numSlices = prizes.length;
-            const sliceAngle = (2 * Math.PI) / numSlices;
-            const radius = canvas.width / 2;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            for (let i = 0; i < numSlices; i++) {
-                const angle = currentAngle + i * sliceAngle;
-                ctx.beginPath();
-                ctx.fillStyle = colors[i];
-                ctx.moveTo(radius, radius);
-                ctx.arc(radius, radius, radius - 8, angle, angle + sliceAngle);
-                ctx.fill();
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = '#fbbf24';
-                ctx.stroke();
-
-                // Draw Text Label
-                ctx.save();
-                ctx.translate(radius, radius);
-                ctx.rotate(angle + sliceAngle / 2);
-                ctx.textAlign = 'right';
-                ctx.fillStyle = '#ffffff';
-                ctx.font = 'black 12px "Plus Jakarta Sans"';
-                ctx.fillText(prizes[i], radius - 25, 4);
-                ctx.restore();
-            }
-        }
-
-        function spinWheel() {
-            if (isSpinning) return;
-            if (userBalance < 19000) {
-                alert('Số dư ví không đủ 19,000đ để thực hiện lượt quay!');
-                return;
-            }
-
-            userBalance -= 19000;
-            document.getElementById('userBalance').innerText = `${userBalance.toLocaleString('vi-VN')}đ`;
-
-            isSpinning = true;
-            const spinAngle = Math.random() * 2000 + 3000;
-            const startAngle = currentAngle;
-            const startTime = performance.now();
-            const duration = 4000;
-
-            function animate(currentTime) {
-                const elapsed = currentTime - startTime;
-                if (elapsed < duration) {
-                    const progress = elapsed / duration;
-                    const easeOut = 1 - Math.pow(1 - progress, 3);
-                    currentAngle = startAngle + easeOut * (spinAngle * Math.PI / 180);
-                    drawWheel();
-                    requestAnimationFrame(animate);
+        // Chuyển đổi Tab Nạp Thẻ / Top Nạp / Ngân Hàng
+        function switchTab(tabName) {
+            const tabs = ['napthe', 'topnap', 'nganhang'];
+            tabs.forEach((t, i) => {
+                const btn = document.getElementById(`tab${i+1}`);
+                if (t === tabName) {
+                    btn.className = "flex-1 py-3 text-center text-sm font-bold text-purple-400 border-b-2 border-purple-500 bg-[#14161f] flex items-center justify-center gap-2";
                 } else {
-                    isSpinning = false;
-                    const winningIndex = Math.floor((prizes.length - ((currentAngle % (2 * Math.PI)) / (2 * Math.PI)) * prizes.length) % prizes.length);
-                    alert(`🎉 CHÚC MỪNG BẠN TRÚNG: ${prizes[winningIndex]}!`);
+                    btn.className = "flex-1 py-3 text-center text-sm font-bold text-gray-400 hover:text-white flex items-center justify-center gap-2";
                 }
+            });
+        }
+
+        // Bật / Tắt Nhạc nền
+        let isPlaying = false;
+        function toggleMusic() {
+            const audio = document.getElementById('bg-music');
+            const icon = document.getElementById('music-icon');
+            if (isPlaying) {
+                audio.pause();
+                icon.className = "fa-solid fa-music text-purple-400";
+            } else {
+                audio.play();
+                icon.className = "fa-solid fa-pause text-red-400";
             }
-            requestAnimationFrame(animate);
+            isPlaying = !isPlaying;
         }
 
-        // Winners Mock Stream
-        const winnersMock = [
-            { user: 'katori_vip9', prize: 'Acc Level Max 2550', time: '1 phút trước' },
-            { user: 'hoang_roblox', prize: '1,000 Robux', time: '2 phút trước' },
-            { user: 'blox_master', prize: 'Acc Tộc V4 Full Gear', time: '4 phút trước' },
-            { user: 'nam_pro_2026', prize: 'Trái Portal VV', time: '6 phút trước' },
-        ];
-
-        function renderWinners() {
-            const container = document.getElementById('liveWinners');
-            container.innerHTML = winnersMock.map(w => `
-                <div class="flex items-center justify-between text-xs border-b border-slate-800/80 pb-2">
-                    <span class="text-slate-300 font-semibold"><i class="fa-solid fa-user text-slate-500 mr-2"></i>${w.user}</span>
-                    <span class="text-amber-400 font-bold">${w.prize}</span>
-                    <span class="text-[10px] text-slate-500">${w.time}</span>
-                </div>
-            `).join('');
+        // Cuộn mượt lên đầu trang
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // Init
-        renderProducts();
-        drawWheel();
-        renderWinners();
     </script>
 </body>
 </html>
