@@ -686,12 +686,8 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       updateUserUI();
-      // Tự động mở bảng đăng nhập / chào mừng ngay khi vào trang nếu chưa đăng nhập
-      if (!getCurrentUser()) {
-        openAuthModal('login');
-      } else {
-        openWelcomeModal();
-      }
+      // Hiển thị trực tiếp trang chủ và bảng thông báo chào mừng khi mở trang
+      // Không gọi tự động bảng đăng nhập nữa
     });
 
     function startMusic() {
