@@ -539,3 +539,585 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPNGOTHIEN.COM - Shop Acc Game & Cày Thuê Blox Fruit</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Be Vietnam Pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #0d0e12;
+            color: #ffffff;
+        }
+
+        /* Hiệu ứng viền Neon phát sáng cho các ô Card */
+        .neon-card {
+            background: #14161f;
+            border: 2px solid #7c3aed;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+            transition: all 0.3s ease;
+        }
+        .neon-card:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+            transform: translateY(-4px);
+        }
+
+        /* Nút Gradient Tím */
+        .btn-purple {
+            background: linear-gradient(90deg, #8b5cf6 0%, #a855f7 100%);
+            transition: all 0.2s ease;
+        }
+        .btn-purple:hover {
+            background: linear-gradient(90deg, #7c3aed 0%, #9333ea 100%);
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0e12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7c3aed;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-12 relative">
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-[#12131a]/95 backdrop-blur-md border-b border-gray-800 shadow-lg">
+        <div class="max-w-[1400px] mx-auto px-4 py-2.5 flex items-center justify-between gap-2 overflow-x-auto">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 flex-shrink-0">
+                <div class="bg-red-600 px-3 py-1 rounded-md font-black text-xl italic tracking-wider text-yellow-300 border border-yellow-400">
+                    NGÔ THIÊN
+                </div>
+            </a>
+
+            <!-- Menu Navigation -->
+            <nav class="flex items-center gap-2 text-xs md:text-sm font-semibold whitespace-nowrap">
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-house"></i> TRANG CHỦ
+                </a>
+                
+                <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-clock-rotate-left"></i> LỊCH SỬ MUA <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+
+                <button class="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-list-check"></i> DỊCH VỤ KHÁC <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+
+                <a href="#" class="bg-cyan-500 hover:bg-cyan-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-user"></i> HỒ SƠ
+                </a>
+
+                <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-wallet"></i> NẠP TIỀN <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+
+                <a href="#" class="bg-slate-600 hover:bg-slate-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-dollar-sign"></i> DÒNG TIỀN
+                </a>
+
+                <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-newspaper"></i> TIN TỨC
+                </a>
+
+                <button class="bg-gray-600 hover:bg-gray-700 text-white px-3 py-1.5 rounded-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-gear"></i> BỔ SUNG <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+            </nav>
+
+            <!-- User Account Info (Sẽ thay đổi tự động bằng JavaScript) -->
+            <div id="header-user-area" class="flex items-center gap-2 bg-[#1c1e2b] px-3 py-1 rounded-full border border-gray-700 flex-shrink-0 cursor-pointer" onclick="openAuthModal('login')">
+                <div class="w-7 h-7 rounded-full bg-gray-600 flex items-center justify-center text-gray-200">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="text-xs leading-tight">
+                    <div id="header-username" class="font-bold text-gray-200">Khách</div>
+                    <div id="header-balance" class="text-yellow-400 font-extrabold">0đ</div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-[1400px] mx-auto px-4 mt-6 space-y-6">
+
+        <!-- TOP SECTION: HERO VIDEO & TOP UP BOX -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- LEFT: VIDEO BANNER & LINKS -->
+            <div class="lg:col-span-7 bg-[#14161f] border border-purple-900/60 rounded-xl p-4 flex flex-col justify-between shadow-xl">
+                <!-- Video Player Container -->
+                <div class="relative rounded-lg overflow-hidden border border-purple-500/30 aspect-video group">
+                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video Thumbnail" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <button onclick="alert('Đang mở Video YouTube...')" class="w-16 h-16 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center text-2xl shadow-lg transform hover:scale-110 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+                    <div class="absolute top-3 left-3 bg-black/70 px-3 py-1 rounded text-xs font-bold flex items-center gap-2">
+                        <span class="text-red-500 font-extrabold">1 Đêm Cày Thuê Của Một Shop "Vô Danh" Có Gì?</span>
+                    </div>
+                    <a href="#" class="absolute bottom-3 right-3 bg-black/80 hover:bg-red-600 text-white text-xs px-3 py-1.5 rounded flex items-center gap-1.5 transition">
+                        Xem trên <i class="fa-brands fa-youtube text-red-500 text-sm"></i> YouTube
+                    </a>
+                </div>
+
+                <!-- Footer Links inside Left Box -->
+                <div class="mt-4 pt-3 border-t border-gray-800 text-xs space-y-2">
+                    <div class="flex flex-wrap items-center gap-2 text-gray-300">
+                        <i class="fa-solid fa-file-contract text-yellow-500"></i>
+                        <span class="font-bold text-gray-200">Chính Sách & Quy Định:</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Quy Định Chung</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Điều Khoản & Miễn Trừ Trách Nhiệm</a>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2 text-gray-300">
+                        <i class="fa-solid fa-headset text-blue-400"></i>
+                        <span class="font-bold text-gray-200">Kênh Hỗ Trợ:</span>
+                        <a href="#" class="text-indigo-400 hover:underline font-semibold">Discord ( Hỗ Trợ Chính )</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Facebook CSKH</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">(Zalo)</a>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2 text-gray-300">
+                        <i class="fa-solid fa-magnifying-glass text-cyan-400"></i>
+                        <span class="font-bold text-gray-200">Tra Cứu Giao Dịch:</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Tiến Độ Cày Thuê</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-yellow-400 hover:underline">Lịch Sử Mua Acc / Game Pass</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: TAB TOP UP CARD -->
+            <div class="lg:col-span-5 bg-[#14161f] border border-purple-900/60 rounded-xl overflow-hidden flex flex-col shadow-xl">
+                <!-- Tab Headers -->
+                <div class="flex border-b border-gray-800 bg-[#1a1c28]">
+                    <button id="tab1" onclick="switchTab('napthe')" class="flex-1 py-3 text-center text-sm font-bold text-purple-400 border-b-2 border-purple-500 bg-[#14161f] flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-credit-card"></i> Nạp Thẻ
+                    </button>
+                    <button id="tab2" onclick="switchTab('topnap')" class="flex-1 py-3 text-center text-sm font-bold text-gray-400 hover:text-white flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-trophy"></i> TOP Nạp
+                    </button>
+                    <button id="tab3" onclick="switchTab('nganhang')" class="flex-1 py-3 text-center text-sm font-bold text-gray-400 hover:text-white flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-building-columns"></i> Ngân Hàng
+                    </button>
+                </div>
+
+                <!-- Dynamic Tab Content (Chuyển đổi theo trạng thái Đăng Nhập) -->
+                <div id="topup-box-content" class="p-6 flex-1 flex flex-col items-center justify-center text-center">
+                    <!-- Javascript sẽ render giao diện Đăng nhập hoặc Nạp thẻ vào đây -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TICKER ANNOUNCEMENT BAR -->
+        <div class="bg-[#14161f] border border-purple-900/60 rounded-xl p-2.5 flex items-center justify-between gap-4 shadow-lg">
+            <div class="flex items-center gap-3 overflow-hidden">
+                <span class="bg-indigo-600/30 text-indigo-300 border border-indigo-500/50 px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 flex-shrink-0">
+                    <i class="fa-solid fa-bell"></i> THÔNG BÁO
+                </span>
+                <div class="truncate text-xs md:text-sm font-extrabold text-red-500 tracking-wide">
+                    SHOPNGOTHIEN.COM <span class="text-gray-300 font-semibold">— Chiết Khấu Thẻ 0% Và Nạp Bank Nhận 20% Trị Giá</span>
+                </div>
+            </div>
+            
+            <button onclick="toggleMusic()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 flex-shrink-0 border border-gray-700">
+                <i class="fa-solid fa-music text-purple-400" id="music-icon"></i> Nhạc nền
+            </button>
+        </div>
+
+        <!-- PRODUCT / SERVICE CARDS GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            <!-- Card 1 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/3b0764/ffffff?text=TRAI+VINH+VIEN" alt="Trái Vĩnh Viễn" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Trái Vĩnh Viễn - Game Pass ( Hàng Gift ) (RT 130)
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/1e1b4b/ffffff?text=ACC+BLOX+FRUITS" alt="Acc Blox Fruit" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Acc Blox Fruit Hàng Quốc Tế Không Có VNG
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/4c1d95/ffffff?text=TRAI+RUONG+SKIN" alt="Trái Rương Skin" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Trái Rương ( Trade ) / Trái Skin
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="neon-card flex flex-col overflow-hidden">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250/0f172a/ffffff?text=ROBUX+CHINH+HANG" alt="Robux Chính Hãng" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex-1 flex flex-col justify-between text-center">
+                    <h3 class="font-extrabold text-sm mb-2 text-gray-100 min-h-[40px] flex items-center justify-center">
+                        Robux Chính Hãng VNG / Quốc Tế
+                    </h3>
+                    <div class="text-emerald-400 font-bold text-xs mb-3">Sẵn Sàng</div>
+                    <button class="btn-purple text-white py-2 rounded-lg font-extrabold text-xs flex items-center justify-center gap-1.5 uppercase">
+                        XEM TẤT CẢ <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- MODAL ĐĂNG NHẬP / ĐĂNG KÝ (POPUP) -->
+    <div id="auth-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-[#14161f] border-2 border-purple-600 rounded-2xl w-full max-w-md p-6 relative shadow-2xl">
+            <!-- Nút đóng Modal -->
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header / Tabs -->
+            <div class="flex border-b border-gray-800 mb-6">
+                <button id="modal-tab-login" onclick="toggleAuthForm('login')" class="flex-1 pb-3 font-extrabold text-purple-400 border-b-2 border-purple-500 text-center">
+                    ĐĂNG NHẬP
+                </button>
+                <button id="modal-tab-register" onclick="toggleAuthForm('register')" class="flex-1 pb-3 font-extrabold text-gray-400 hover:text-white text-center">
+                    ĐĂNG KÝ
+                </button>
+            </div>
+
+            <!-- Thống báo Lỗi / Thành công -->
+            <div id="auth-alert" class="hidden mb-4 p-3 rounded-lg text-xs font-bold text-center"></div>
+
+            <!-- FORM ĐĂNG NHẬP -->
+            <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5">Tên đăng nhập</label>
+                    <input type="text" id="login-username" required placeholder="Nhập tên tài khoản..." class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5">Mật khẩu</label>
+                    <input type="password" id="login-password" required placeholder="Nhập mật khẩu..." class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                </div>
+                <button type="submit" class="w-full btn-purple text-white py-2.5 rounded-lg font-bold text-sm shadow-md mt-2">
+                    ĐĂNG NHẬP NGAY
+                </button>
+            </form>
+
+            <!-- FORM ĐĂNG KÝ -->
+            <form id="register-form" onsubmit="handleRegister(event)" class="space-y-4 hidden">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5">Tên đăng nhập mới</label>
+                    <input type="text" id="reg-username" required placeholder="Tạo tên tài khoản..." class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5">Mật khẩu</label>
+                    <input type="password" id="reg-password" required placeholder="Tạo mật khẩu..." class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5">Xác nhận mật khẩu</label>
+                    <input type="password" id="reg-repassword" required placeholder="Nhập lại mật khẩu..." class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                </div>
+                <button type="submit" class="w-full btn-purple text-white py-2.5 rounded-lg font-bold text-sm shadow-md mt-2">
+                    TẠO TÀI KHOẢN
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AUDIO PLAYER HIDDEN -->
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JAVASCRIPT XỬ LÝ HỆ THỐNG DỮ LIỆU & GIAO DIỆN -->
+    <script>
+        // Mở / Đóng Modal Authentication
+        function openAuthModal(mode) {
+            document.getElementById('auth-modal').classList.remove('hidden');
+            toggleAuthForm(mode);
+        }
+
+        function closeAuthModal() {
+            document.getElementById('auth-modal').classList.add('hidden');
+            hideAlert();
+        }
+
+        function toggleAuthForm(mode) {
+            hideAlert();
+            const loginForm = document.getElementById('login-form');
+            const regForm = document.getElementById('register-form');
+            const tabLogin = document.getElementById('modal-tab-login');
+            const tabReg = document.getElementById('modal-tab-register');
+
+            if (mode === 'login') {
+                loginForm.classList.remove('hidden');
+                regForm.classList.add('hidden');
+                tabLogin.className = "flex-1 pb-3 font-extrabold text-purple-400 border-b-2 border-purple-500 text-center";
+                tabReg.className = "flex-1 pb-3 font-extrabold text-gray-400 hover:text-white text-center";
+            } else {
+                loginForm.classList.add('hidden');
+                regForm.classList.remove('hidden');
+                tabReg.className = "flex-1 pb-3 font-extrabold text-purple-400 border-b-2 border-purple-500 text-center";
+                tabLogin.className = "flex-1 pb-3 font-extrabold text-gray-400 hover:text-white text-center";
+            }
+        }
+
+        function showAlert(msg, isError = true) {
+            const alertBox = document.getElementById('auth-alert');
+            alertBox.classList.remove('hidden');
+            alertBox.innerText = msg;
+            if (isError) {
+                alertBox.className = "mb-4 p-3 rounded-lg text-xs font-bold text-center bg-red-950/80 text-red-400 border border-red-800";
+            } else {
+                alertBox.className = "mb-4 p-3 rounded-lg text-xs font-bold text-center bg-emerald-950/80 text-emerald-400 border border-emerald-800";
+            }
+        }
+
+        function hideAlert() {
+            document.getElementById('auth-alert').classList.add('hidden');
+        }
+
+        // --- XỬ LÝ ĐĂNG KÝ (KIỂM TRA TRÙNG TÊN) ---
+        function handleRegister(e) {
+            e.preventDefault();
+            const username = document.getElementById('reg-username').value.trim();
+            const password = document.getElementById('reg-password').value;
+            const repassword = document.getElementById('reg-repassword').value;
+
+            if (password !== repassword) {
+                showAlert("Mật khẩu xác nhận không khớp!");
+                return;
+            }
+
+            // Lấy danh sách tài khoản hiện tại trong LocalStorage
+            let users = JSON.parse(localStorage.getItem('shop_users')) || [];
+
+            // Kiểm tra trùng tên tài khoản (Không phân biệt hoa thường)
+            const isExist = users.some(u => u.username.toLowerCase() === username.toLowerCase());
+
+            if (isExist) {
+                showAlert(`Tên tài khoản "${username}" đã tồn tại! Vui lòng chọn tên khác.`);
+                return;
+            }
+
+            // Lưu tài khoản mới
+            const newUser = {
+                username: username,
+                password: password,
+                balance: 0
+            };
+
+            users.push(newUser);
+            localStorage.setItem('shop_users', JSON.stringify(users));
+
+            // Tự động đăng nhập luôn sau khi đăng ký thành công
+            localStorage.setItem('current_user', JSON.stringify(newUser));
+            showAlert("Đăng ký tài khoản thành công!", false);
+
+            setTimeout(() => {
+                closeAuthModal();
+                updateUIState();
+            }, 1000);
+        }
+
+        // --- XỬ LÝ ĐĂNG NHẬP ---
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value;
+
+            let users = JSON.parse(localStorage.getItem('shop_users')) || [];
+
+            const user = users.find(u => u.username.toLowerCase() === username.toLowerCase() && u.password === password);
+
+            if (!user) {
+                showAlert("Tên đăng nhập hoặc mật khẩu không chính xác!");
+                return;
+            }
+
+            // Lưu phiên đăng nhập
+            localStorage.setItem('current_user', JSON.stringify(user));
+            showAlert("Đăng nhập thành công!", false);
+
+            setTimeout(() => {
+                closeAuthModal();
+                updateUIState();
+            }, 800);
+        }
+
+        // --- XỬ LÝ ĐĂNG XUẤT ---
+        function handleLogout() {
+            if (confirm("Bạn có chắc chắn muốn đăng xuất?")) {
+                localStorage.removeItem('current_user');
+                updateUIState();
+            }
+        }
+
+        // --- CẬP NHẬT GIAO DIỆN THEO TRẠNG THÁI TÀI KHOẢN ---
+        function updateUIState() {
+            const currentUser = JSON.parse(localStorage.getItem('current_user'));
+            const headerArea = document.getElementById('header-user-area');
+            const topupBoxContent = document.getElementById('topup-box-content');
+
+            if (currentUser) {
+                // ĐÃ ĐĂNG NHẬP
+                headerArea.onclick = null;
+                headerArea.innerHTML = `
+                    <div class="w-7 h-7 rounded-full bg-purple-600 flex items-center justify-center text-white font-extrabold text-xs">
+                        ${currentUser.username.charAt(0).toUpperCase()}
+                    </div>
+                    <div class="text-xs leading-tight">
+                        <div class="font-bold text-gray-200">${currentUser.username}</div>
+                        <div class="text-yellow-400 font-extrabold">${currentUser.balance.toLocaleString()}đ</div>
+                    </div>
+                    <button onclick="handleLogout()" class="ml-2 text-xs bg-red-600/30 hover:bg-red-600 text-red-300 hover:text-white px-2 py-1 rounded transition" title="Đăng xuất">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                `;
+
+                // Render Khung Nạp Thẻ khi đã đăng nhập
+                topupBoxContent.innerHTML = `
+                    <form onsubmit="alert('Hệ thống đang bảo trì nạp thẻ!'); return false;" class="w-full space-y-3 text-left">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1">Loại Thẻ</label>
+                            <select class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none">
+                                <option>Viettel</option>
+                                <option>MobiFone</option>
+                                <option>Vinaphone</option>
+                                <option>Zing</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1">Mệnh Giá</label>
+                            <select class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none">
+                                <option>10.000 VNĐ</option>
+                                <option>20.000 VNĐ</option>
+                                <option>50.000 VNĐ</option>
+                                <option>100.000 VNĐ</option>
+                                <option>500.000 VNĐ</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1">Mã Thẻ / Seri</label>
+                            <input type="text" placeholder="Nhập mã thẻ..." class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white mb-2 focus:outline-none">
+                            <input type="text" placeholder="Nhập số seri..." class="w-full bg-[#1c1e2b] border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none">
+                        </div>
+                        <button type="submit" class="w-full btn-purple text-white py-2 rounded-lg font-bold text-xs uppercase shadow-md">
+                            NẠP THẺ NGAY
+                        </button>
+                    </form>
+                `;
+            } else {
+                // CHƯA ĐĂNG NHẬP (KHÁCH)
+                headerArea.onclick = () => openAuthModal('login');
+                headerArea.innerHTML = `
+                    <div class="w-7 h-7 rounded-full bg-gray-600 flex items-center justify-center text-gray-200">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="text-xs leading-tight">
+                        <div class="font-bold text-gray-200">Khách</div>
+                        <div class="text-yellow-400 font-extrabold">0đ</div>
+                    </div>
+                `;
+
+                topupBoxContent.innerHTML = `
+                    <div class="w-16 h-16 rounded-full border-2 border-gray-700 flex items-center justify-center text-gray-500 text-3xl mb-4">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <p class="text-gray-300 font-semibold mb-5">Vui lòng đăng nhập để nạp thẻ</p>
+                    <button onclick="openAuthModal('login')" class="btn-purple text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-md">
+                        Đăng Nhập
+                    </button>
+                `;
+            }
+        }
+
+        // Chạy khi tải trang
+        window.onload = function() {
+            updateUIState();
+        };
+
+        // Bật / Tắt Nhạc nền
+        let isPlaying = false;
+        function toggleMusic() {
+            const audio = document.getElementById('bg-music');
+            const icon = document.getElementById('music-icon');
+            if (isPlaying) {
+                audio.pause();
+                icon.className = "fa-solid fa-music text-purple-400";
+            } else {
+                audio.play();
+                icon.className = "fa-solid fa-pause text-red-400";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Chuyển Tab Nạp Thẻ / TOP / Bank
+        function switchTab(tabName) {
+            const tabs = ['napthe', 'topnap', 'nganhang'];
+            tabs.forEach((t, i) => {
+                const btn = document.getElementById(`tab${i+1}`);
+                if (t === tabName) {
+                    btn.className = "flex-1 py-3 text-center text-sm font-bold text-purple-400 border-b-2 border-purple-500 bg-[#14161f] flex items-center justify-center gap-2";
+                } else {
+                    btn.className = "flex-1 py-3 text-center text-sm font-bold text-gray-400 hover:text-white flex items-center justify-center gap-2";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
