@@ -1,327 +1,900 @@
-<!doctype html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111827">
-  <title>Katoris Shop - Game Services</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+* {
+  box-sizing: border-box;
+}
 
-<body>
 
-<header class="topbar">
-  <div class="container nav">
+html {
+  scroll-behavior: smooth;
+}
 
-    <a class="brand" href="#home">
-      <span class="brand-dot"></span>
-      KATORIS<span>SHOP</span>
-    </a>
 
-    <nav>
-      <a href="#home">Trang chủ</a>
-      <a href="#products">Sản phẩm</a>
-      <a href="#orders">Tra cứu đơn</a>
-      <a href="#support">Hỗ trợ</a>
-    </nav>
+body {
+  margin: 0;
+  background: #071021;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    <button class="cart-btn" id="openCart">
-      🛒 Giỏ hàng
-      <b id="cartCount">0</b>
-    </button>
 
-  </div>
-</header>
+/* =========================
+   HEADER
+========================= */
 
+.topbar {
 
-<main id="home">
+  height: 76px;
 
-  <!-- HERO -->
+  background: #f7d98c;
 
-  <section class="hero">
-    <div class="container hero-grid">
+  display: flex;
 
-      <div>
+  align-items: center;
 
-        <div class="pill">
-          ⚡ SHOP GAME SERVICES
-        </div>
+  gap: 16px;
 
-        <h1>
-          Dịch vụ game<br>
-          <em>nhanh - uy tín - tiện lợi</em>
-        </h1>
+  padding: 8px 18px;
 
-        <p>
-          Cày thuê, vật phẩm và dịch vụ game.
-          Đặt đơn trực tiếp, theo dõi trạng thái ngay trên website.
-        </p>
+  position: sticky;
 
-        <div class="hero-actions">
-          <a class="primary" href="#products">
-            Xem sản phẩm
-          </a>
+  top: 0;
 
-          <a class="secondary" href="#orders">
-            Tra cứu đơn
-          </a>
-        </div>
+  z-index: 20;
 
-      </div>
+  box-shadow: 0 2px 10px #0004;
+}
 
 
-      <div class="hero-card">
+.brand {
 
-        <div class="hero-orb">
-          🎮
-        </div>
+  width: 145px;
 
-        <strong>BLOX FRUITS</strong>
+  height: 55px;
 
-        <span>Dịch vụ nổi bật</span>
+  overflow: hidden;
 
-        <div class="mini-stats">
-          <b>24/7</b>
-          <b>⚡ Nhanh</b>
-          <b>✓ Uy tín</b>
-        </div>
+  border-radius: 3px;
 
-      </div>
+  flex: 0 0 auto;
+}
 
-    </div>
-  </section>
 
+.brand-img {
 
+  width: 100%;
 
-  <!-- PRODUCTS -->
+  height: 100%;
 
-  <section class="container section" id="products">
+  object-fit: cover;
 
-    <div class="section-head">
+  object-position: left top;
 
-      <div>
-        <small>DANH MỤC</small>
-        <h2>Sản phẩm & dịch vụ</h2>
-      </div>
+  filter: saturate(.85);
+}
 
-      <div class="search">
-        <span>⌕</span>
-        <input
-          id="search"
-          placeholder="Tìm sản phẩm..."
-        >
-      </div>
 
-    </div>
+/* =========================
+   NAV
+========================= */
 
+nav {
 
-    <div class="chips" id="chips"></div>
+  display: flex;
 
-    <div
-      class="products"
-      id="productsGrid"
-    ></div>
+  align-items: center;
 
-  </section>
+  gap: 8px;
 
+  flex: 1;
 
+  overflow: auto;
 
-  <!-- ORDERS -->
+  white-space: nowrap;
+}
 
-  <section
-    class="container section"
-    id="orders"
-  >
 
-    <div class="order-box">
+nav a {
 
-      <div>
+  display: flex;
 
-        <small>ĐƠN HÀNG</small>
+  align-items: center;
 
-        <h2>
-          Tra cứu đơn hàng
-        </h2>
+  gap: 8px;
 
-        <p>
-          Nhập mã đơn để xem trạng thái đơn.
-        </p>
+  text-decoration: none;
 
-      </div>
+  color: #272323;
 
+  font-size: 13px;
 
-      <div class="lookup">
+  font-weight: 800;
 
-        <input
-          id="orderCode"
-          placeholder="Ví dụ: KT-123456"
-        >
+  padding: 12px 10px;
 
-        <button
-          class="primary"
-          id="lookupBtn"
-        >
-          Tra cứu
-        </button>
+  border-radius: 9px;
+}
 
-      </div>
 
+nav a span {
 
-      <div
-        id="orderResult"
-        class="result"
-      ></div>
+  display: grid;
 
-    </div>
+  place-items: center;
 
-  </section>
+  width: 28px;
 
+  height: 28px;
 
+  border-radius: 8px;
 
-  <!-- SUPPORT -->
+  background: #5b5bbd;
 
-  <section
-    class="container section"
-    id="support"
-  >
+  color: #fff;
+}
 
-    <div class="support">
 
-      <div>
+nav a:nth-child(2) span {
+  background: #43824a;
+}
 
-        <small>HỖ TRỢ</small>
 
-        <h2>
-          Cần hỗ trợ?
-        </h2>
+nav a:nth-child(3) span {
+  background: #d76642;
+}
 
-        <p>
-          Liên hệ quản trị viên để được giải đáp
-          về đơn hàng và dịch vụ.
-        </p>
 
-      </div>
+nav a:nth-child(4) span {
+  background: #359a9a;
+}
 
 
-      <div class="support-cards">
+nav a:nth-child(5) span {
+  background: #c9513a;
+}
 
-        <div>
-          💬
-          <b>Chat hỗ trợ</b>
-          <span>Phản hồi nhanh</span>
-        </div>
 
-        <div>
-          🧾
-          <b>Đơn hàng</b>
-          <span>Kiểm tra trạng thái</span>
-        </div>
+nav a:nth-child(6) span {
+  background: #3b3c37;
+}
 
-        <div>
-          🔒
-          <b>An toàn</b>
-          <span>Thông tin riêng tư</span>
-        </div>
 
-      </div>
+nav a:nth-child(7) span {
+  background: #4e9b90;
+}
 
-    </div>
 
-  </section>
+nav a:nth-child(8) span {
+  background: #353731;
+}
 
-</main>
 
+nav a.active {
+  color: #4f49b6;
+}
 
 
-<!-- FOOTER -->
+.account {
 
-<footer>
+  min-width: 100px;
 
-  <div class="container footer">
+  font-weight: 800;
 
-    <b>
-      KATORIS SHOP
-    </b>
+  font-size: 12px;
+}
 
-    <span>
-      © 2026 Katoris Shop. Demo website.
-    </span>
 
-  </div>
+.avatar {
 
-</footer>
+  display: inline-grid;
 
+  place-items: center;
 
+  width: 31px;
 
-<!-- CART BACKDROP -->
+  height: 31px;
 
-<div
-  class="drawer-backdrop"
-  id="backdrop"
-></div>
+  border-radius: 50%;
 
+  background: #ead4a1;
+}
 
 
-<!-- CART -->
+/* =========================
+   MAIN
+========================= */
 
-<aside
-  class="cart"
-  id="cart"
->
+.page {
 
-  <div class="cart-head">
+  max-width: 1260px;
 
-    <h2>
-      Giỏ hàng
-    </h2>
+  margin: auto;
 
-    <button id="closeCart">
-      ×
-    </button>
+  padding: 16px 20px 60px;
+}
 
-  </div>
 
+/* =========================
+   HERO
+========================= */
 
-  <div id="cartItems"></div>
+.hero {
 
+  display: grid;
 
-  <div class="cart-foot">
+  grid-template-columns: 2fr 1fr;
 
-    <div>
+  gap: 12px;
+}
 
-      <span>
-        Tổng
-      </span>
 
-      <strong id="cartTotal">
-        0đ
-      </strong>
+.hero-banner {
 
-    </div>
+  min-height: 270px;
 
-    <button
-      class="primary"
-      id="checkout"
-    >
-      Đặt đơn
-    </button>
+  border: 3px solid #7255e8;
 
-  </div>
+  border-radius: 13px;
 
-</aside>
+  overflow: hidden;
 
+  background:
+    linear-gradient(
+      110deg,
+      #111a38,
+      #40211b 45%,
+      #080b19
+    );
 
+  position: relative;
+}
 
-<!-- TOAST -->
 
-<div
-  class="toast"
-  id="toast"
-></div>
+.hero-banner:before {
 
+  content: "";
 
+  position: absolute;
 
-<script src="script.js"></script>
+  inset: 0;
 
-</body>
-</html>
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      #ffb00055,
+      transparent 20%
+    ),
+    linear-gradient(
+      135deg,
+      #16245c,
+      #2d1116 55%,
+      #0b1020
+    );
+
+  opacity: .9;
+}
+
+
+.banner-overlay {
+
+  position: relative;
+
+  padding: 48px 55px;
+
+  color: #fff;
+}
+
+
+.small {
+
+  font-size: 20px;
+
+  font-weight: 900;
+}
+
+
+.banner-overlay h1 {
+
+  font-size: 52px;
+
+  line-height: .9;
+
+  margin: 8px 0;
+
+  text-shadow: 3px 3px 0 #000;
+}
+
+
+.banner-overlay h1 strong {
+
+  color: #ffc400;
+}
+
+
+.banner-overlay p {
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+
+.banner-overlay button,
+.login-box button {
+
+  border: 0;
+
+  background: #7554d9;
+
+  color: #fff;
+
+  font-weight: 900;
+
+  padding: 12px 23px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-box {
+
+  background: #f8f2e7;
+
+  border-radius: 12px;
+
+  min-height: 270px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid #e8d8b9;
+}
+
+
+.user-icon {
+
+  font-size: 58px;
+
+  color: #777;
+}
+
+
+.login-box p {
+
+  font-weight: 700;
+
+  color: #555;
+}
+
+
+/* =========================
+   QUICK INFO
+========================= */
+
+.quick-info {
+
+  margin-top: 12px;
+
+  background: #f7f0e3;
+
+  border-radius: 9px;
+
+  padding: 11px 18px;
+
+  line-height: 1.8;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.quick-info a {
+
+  color: #d2a85b;
+}
+
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice {
+
+  height: 48px;
+
+  margin-top: 10px;
+
+  background: #f7f0e3;
+
+  border-radius: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 16px;
+
+  font-size: 12px;
+
+  overflow: hidden;
+}
+
+
+.notice.purple {
+
+  color: #6a5bb3;
+}
+
+
+.notice.green {
+
+  color: #3d9871;
+}
+
+
+.notice marquee {
+
+  color: #666;
+
+  font-weight: 800;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+
+  padding-top: 12px;
+}
+
+
+.search {
+
+  background: #f7e9ca;
+
+  border-radius: 24px;
+
+  width: 360px;
+
+  padding: 10px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0 0 14px;
+}
+
+
+.search input {
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  width: 100%;
+
+  font-weight: 700;
+
+  color: #555;
+}
+
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+  background: #f6efe1;
+
+  border: 3px solid #5046ce;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 1px #5f4cff55,
+    0 0 15px #382cff44;
+
+  transition: .18s;
+}
+
+
+.card:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 22px #655cff77;
+}
+
+
+.card-img {
+
+  height: 174px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #123b9d,
+      #17183d
+    );
+
+  display: grid;
+
+  place-items: center;
+
+  color: #fff;
+
+  font-weight: 900;
+
+  font-size: 28px;
+
+  text-align: center;
+
+  padding: 10px;
+}
+
+
+.card:nth-child(3n) .card-img {
+
+  background:
+    linear-gradient(
+      135deg,
+      #2c0c55,
+      #0e5a91
+    );
+}
+
+
+.card:nth-child(4n) .card-img {
+
+  background:
+    linear-gradient(
+      135deg,
+      #35332a,
+      #11141d
+    );
+}
+
+
+.emoji {
+
+  font-size: 54px;
+
+  display: block;
+}
+
+
+.card-body {
+
+  padding: 14px 12px 12px;
+
+  text-align: center;
+}
+
+
+.card h3 {
+
+  font-size: 16px;
+
+  line-height: 1.35;
+
+  min-height: 44px;
+
+  margin: 0 0 8px;
+}
+
+
+.ready {
+
+  color: #4e9a79;
+
+  font-weight: 900;
+
+  font-size: 14px;
+
+  margin-bottom: 10px;
+}
+
+
+.card button {
+
+  width: 100%;
+
+  border: 0;
+
+  background: #8060df;
+
+  color: #fff;
+
+  padding: 11px;
+
+  border-radius: 7px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+
+.card.hidden {
+
+  display: none;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+
+  margin-top: 55px;
+
+  background: #f6efe1;
+
+  border-radius: 9px;
+
+  padding: 22px 25px;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+.about h2 {
+
+  font-size: 18px;
+
+  margin-top: 0;
+}
+
+
+.about ul {
+
+  padding-left: 0;
+
+  list-style: none;
+}
+
+
+.about li {
+
+  margin: 9px 0;
+}
+
+
+/* =========================
+   FLOATING BUTTONS
+========================= */
+
+.music,
+.up {
+
+  position: fixed;
+
+  right: 16px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  z-index: 30;
+
+  cursor: pointer;
+}
+
+
+.music {
+
+  bottom: 15px;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 25px;
+}
+
+
+.music small {
+
+  font-size: 12px;
+}
+
+
+.up {
+
+  bottom: 58px;
+
+  width: 38px;
+
+  height: 38px;
+
+  background: #8d83d7;
+
+  color: #fff;
+
+  font-size: 22px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+#toast {
+
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 25px;
+
+  transform: translateX(-50%);
+
+  background: #19172a;
+
+  color: #fff;
+
+  padding: 12px 18px;
+
+  border-radius: 9px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: .2s;
+
+  z-index: 100;
+}
+
+
+#toast.show {
+
+  opacity: 1;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1050px) {
+
+  .topbar {
+
+    height: auto;
+
+    flex-wrap: wrap;
+  }
+
+
+  .brand {
+
+    width: 120px;
+  }
+
+
+  nav {
+
+    order: 3;
+
+    width: 100%;
+  }
+
+
+  .grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px) {
+
+  .hero {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .search {
+
+    width: 100%;
+  }
+
+
+  .banner-overlay h1 {
+
+    font-size: 38px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px) {
+
+  .page {
+
+    padding: 10px;
+  }
+
+
+  .grid {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .card-img {
+
+    height: 190px;
+  }
+
+
+  .quick-info {
+
+    font-size: 12px;
+  }
+
+
+  .account {
+
+    display: none;
+  }
+
+}
