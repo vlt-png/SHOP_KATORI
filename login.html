@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Đăng nhập - SHOP KATORI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#000;color:#172033;font-family:'Roboto Condensed',Arial,sans-serif;display:grid;place-items:center;overflow:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(circle,#172eff 1px,transparent 1.8px),radial-gradient(circle,#1b34ff 1px,transparent 1.8px);background-size:390px 270px,530px 410px;background-position:30px 25px,200px 110px;opacity:.95}
+.card{position:relative;width:min(640px,calc(100% - 30px));background:#f3f3f3;border-radius:42px;padding:46px 52px 50px;box-shadow:0 20px 65px #000b}.card h1{text-align:center;margin:0;font-size:38px;font-weight:800}.subtitle{text-align:center;color:#536176;font-weight:600;font-size:18px;margin:8px 0 36px}.field{margin:20px 0}.field label{display:block;font-weight:800;font-size:17px;margin-bottom:9px}.input{position:relative}.input i{position:absolute;left:19px;top:18px;color:#a6a6a6}.input input{width:100%;height:62px;border:1px solid #c9c9c9;border-radius:16px;background:#e9e9e9;padding:0 52px;font:600 17px 'Roboto Condensed';outline:none;color:#444}.input input:focus{border-color:#a88cff;box-shadow:0 0 0 2px #a88cff55}.eye{position:absolute;right:18px;top:17px;border:0;background:none;color:#929292;font-size:18px;cursor:pointer}.remember{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;color:#666;margin:16px 0 24px}.remember input{width:24px;height:24px}.submit{width:100%;height:62px;border:0;border-radius:15px;background:linear-gradient(90deg,#9d85ff,#8065dd);color:#fff;font:800 18px 'Roboto Condensed';box-shadow:0 7px 12px #5b48a866;cursor:pointer}.or{display:flex;align-items:center;gap:15px;color:#6b7280;font-weight:800;font-size:17px;justify-content:center;margin:38px 0 20px}.or:before,.or:after{content:"";height:1px;background:#ddd;flex:1}.socials{display:flex;justify-content:center;gap:18px}.socials button{width:56px;height:56px;border:0;border-radius:50%;color:#fff;font-size:23px;box-shadow:0 4px 8px #0003;cursor:pointer}.fb{background:#3158a9}.gg{background:#df3f35}.dc{background:#26364f}.back{position:fixed;left:24px;top:20px;background:#fff;border:0;border-radius:12px;padding:11px 15px;font:800 16px 'Roboto Condensed';cursor:pointer;z-index:2}.reg{display:block;text-align:center;margin-top:18px;color:#7759df;font-weight:800;cursor:pointer}
+</style></head><body>
+<button class="back" onclick="location.href='./'">← Trang chủ</button>
+<section class="card">
+<h1>Đăng Nhập</h1><p class="subtitle">Đăng nhập để tiếp tục trải nghiệm của bạn</p>
+<form onsubmit="submitLogin(event)">
+<div class="field"><label>Tài khoản</label><div class="input"><i class="fa-regular fa-user"></i><input id="u" autocomplete="username" placeholder="Nhập tên tài khoản" required></div></div>
+<div class="field"><label>Mật khẩu</label><div class="input"><i class="fa-solid fa-lock"></i><input id="p" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu" required><button class="eye" type="button" onclick="eye()"><i id="eye" class="fa-regular fa-eye"></i></button></div></div>
+<label class="remember"><input type="checkbox"> Ghi nhớ đăng nhập</label>
+<button class="submit">Đăng nhập</button></form>
+<div class="or">Hoặc đăng nhập với</div>
+<div class="socials"><button class="fb">f</button><button class="gg">G</button><button class="dc"><i class="fa-solid fa-user"></i></button></div>
+<a class="reg" href="#" onclick="return register()">Chưa có tài khoản? Tạo tài khoản</a>
+</section>
+<script>
+function db(){return JSON.parse(localStorage.getItem('katori_users_db')||'{}')}
+function submitLogin(e){e.preventDefault();const u=document.getElementById('u').value.trim(),p=document.getElementById('p').value,d=db();if(!d[u]||d[u].password!==p){alert('Tài khoản hoặc mật khẩu không chính xác!');return}localStorage.setItem('katori_current_user',u);location.href='./'}
+function eye(){const p=document.getElementById('p'),i=document.getElementById('eye');p.type=p.type==='password'?'text':'password';i.className=p.type==='password'?'fa-regular fa-eye':'fa-regular fa-eye-slash'}
+function register(){const u=prompt('Tên tài khoản mới:');if(!u)return false;const p=prompt('Mật khẩu:');if(!p)return false;const d=db();if(d[u]){alert('Tên tài khoản đã tồn tại!');return false}d[u]={password:p,balance:0};localStorage.setItem('katori_users_db',JSON.stringify(d));localStorage.setItem('katori_current_user',u);alert('Tạo tài khoản thành công!');location.href='./';return false}
+</script></body></html>
