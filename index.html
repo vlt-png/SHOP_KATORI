@@ -4,96 +4,66 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SHOP KATORI - Acc Game & Cày Thuê</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#000;color:#172033;font-family:'Roboto Condensed',Arial,sans-serif;min-height:100vh}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#152cff 1px,transparent 1.7px),radial-gradient(circle,#1f35ff 1px,transparent 1.6px);background-size:370px 260px,520px 410px;background-position:40px 25px,210px 110px;opacity:.9;z-index:-1}
-a{text-decoration:none;color:inherit}.wrap{width:min(1620px,calc(100% - 34px));margin:auto}
-.nav{position:sticky;top:18px;z-index:50;margin:18px auto 0;background:#fff;border-radius:12px;padding:14px 20px;box-shadow:0 12px 30px #0008;display:flex;align-items:center;gap:18px}
-.logo{width:190px;height:50px;object-fit:contain;border-radius:8px;flex:none}.navlinks{display:flex;align-items:center;gap:8px;flex:1}.navbtn{display:flex;align-items:center;gap:9px;padding:11px 13px;border-radius:10px;font-weight:800;font-size:15px;color:#26324a;white-space:nowrap}.navbtn i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-size:13px;background:#8b5cf6}.navbtn:nth-child(2) i{background:#35b58b}.navbtn:nth-child(3) i{background:#f08a61}.navbtn:nth-child(4) i{background:#10b8d8}.navbtn:nth-child(5) i{background:#e95b61}.navbtn:nth-child(6) i{background:#64748b}.navbtn:nth-child(7) i{background:#16b9d3}.navbtn:nth-child(8) i{background:#7c8798}.navbtn:hover{background:#f1f3ff;color:#6846dc}.user{position:relative}.userbtn{border:0;background:#fff;box-shadow:0 3px 16px #7c3aed2b;border-radius:16px;padding:7px 13px;display:flex;align-items:center;gap:9px;font:800 16px 'Roboto Condensed';color:#334155;cursor:pointer}.avatar{width:34px;height:34px;border-radius:50%;background:#111827;color:#fff;display:grid;place-items:center}.bal{color:#a78bfa;font-size:14px}.dropdown{position:absolute;right:0;top:54px;width:190px;background:#fff;border-radius:10px;box-shadow:0 12px 30px #0005;padding:8px;display:none}.dropdown.show{display:block}.dropdown button{width:100%;border:0;background:none;text-align:left;padding:11px;border-radius:7px;font:600 16px 'Roboto Condensed';cursor:pointer}.dropdown button:hover{background:#f1f3ff;color:#7654df}
-.hero{min-height:420px;display:grid;grid-template-columns:320px 1fr;gap:26px;align-items:start;padding:24px 0 70px}.service-card{margin-top:-12px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 0 0 3px #4426ff,0 15px 35px #0008}.service-art{height:230px;background:linear-gradient(135deg,#0d5,#4ade80 55%,#111);display:grid;place-items:center;font-size:82px;color:#111}.service-body{text-align:center;padding:20px 16px 18px}.service-body h3{margin:0 0 12px;font-size:22px}.ready{color:#12a56d;font-weight:800;margin-bottom:12px}.cta{display:block;background:linear-gradient(90deg,#9b83ff,#c066db);color:#fff;border-radius:10px;padding:11px;font-weight:800;font-size:17px}.hero-space{min-height:390px}
-.info{background:#fff;border-radius:8px;padding:26px 25px;margin-bottom:70px;font-size:18px;line-height:1.35;box-shadow:0 10px 30px #0005}.info h2{font-size:22px;margin:0 0 16px}.info ul{margin:0;padding-left:4px;list-style:none}.info li{margin:8px 0;font-weight:600}.music{position:fixed;right:24px;bottom:18px;background:#05070cdd;color:#fff;border:0;border-radius:20px;padding:12px 16px;font-weight:700;z-index:60;cursor:pointer}.top{position:fixed;right:28px;bottom:74px;width:46px;height:46px;border-radius:50%;background:#a78bfa;color:#fff;border:0;font-size:22px;cursor:pointer}
-footer{color:#aaa;text-align:center;padding:20px;border-top:1px solid #222}
-.mobile{display:none}
-.modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;z-index:100;padding:20px}.modal.show{display:grid}.modalbox{width:min(460px,100%);background:#f4f4f4;border-radius:28px;padding:30px;box-shadow:0 20px 60px #000}.modalbox h2{text-align:center;font-size:34px;margin:0 0 5px}.sub{text-align:center;color:#64748b;margin:0 0 22px;font-weight:600}.field{margin:15px 0}.field label{display:block;font-weight:800;margin-bottom:7px}.field input{width:100%;padding:15px 16px;border:1px solid #cbd5e1;border-radius:14px;background:#eee;color:#172033;font:600 16px 'Roboto Condensed';outline:none}.field input:focus{border-color:#a78bfa;box-shadow:0 0 0 3px #a78bfa55}.submit{width:100%;border:0;border-radius:13px;padding:14px;background:linear-gradient(90deg,#9b83ff,#8266df);color:#fff;font:800 18px 'Roboto Condensed';cursor:pointer}.socials{display:flex;justify-content:center;gap:18px;margin-top:20px}.socials button{width:48px;height:48px;border:0;border-radius:50%;color:#fff;font-size:20px;cursor:pointer}.fb{background:#3158a9}.gg{background:#df3f35}.dc{background:#26364f}.close{position:absolute;top:22px;right:22px;border:0;background:#fff;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:18px}
-@media(max-width:1200px){.navlinks{gap:2px}.navbtn{padding:9px 7px;font-size:13px}.navbtn i{width:24px;height:24px}.logo{width:165px}.hero{grid-template-columns:290px 1fr}}
-@media(max-width:900px){.nav{top:8px;margin-top:8px;padding:10px}.navlinks{display:none}.mobile{display:block;margin-left:auto;border:0;background:#eef2ff;border-radius:9px;padding:10px 13px;font-size:18px}.hero{grid-template-columns:1fr;padding-top:30px}.service-card{width:min(330px,100%);margin:auto}.hero-space{display:none}.info{margin-top:0}.nav .logo{width:155px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#030306;color:#26334b;font-family:'Roboto Condensed',Arial,sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#233cff 1.3px,transparent 1.8px),radial-gradient(circle,#233cff 1px,transparent 1.8px);background-size:370px 260px,520px 410px;background-position:40px 25px,210px 110px;z-index:-1}
+a{text-decoration:none;color:inherit}.wrap{width:min(1340px,calc(100% - 32px));margin:auto}
+.nav{position:sticky;top:12px;z-index:50;margin:16px auto 0;background:linear-gradient(110deg,#fff,#f7f8ff);border-radius:12px;padding:12px 18px;box-shadow:0 10px 30px #fff3;display:flex;align-items:center;gap:14px}
+.logo{width:162px;height:48px;object-fit:contain;border-radius:6px;flex:none}.navlinks{display:flex;align-items:center;justify-content:space-between;gap:3px;flex:1}.navbtn{display:flex;align-items:center;gap:8px;padding:9px 8px;border-radius:9px;font-weight:800;font-size:14px;color:#334155;white-space:nowrap}.navbtn i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-size:13px;background:#8b5cf6}.navbtn:nth-child(2) i{background:#35b58b}.navbtn:nth-child(3) i{background:#f08a61}.navbtn:nth-child(4) i{background:#10b8d8}.navbtn:nth-child(5) i{background:#e95b61}.navbtn:nth-child(6) i{background:#64748b}.navbtn:nth-child(7) i{background:#16b9d3}.navbtn:nth-child(8) i{background:#7c8798}.navbtn:hover{background:#f0edff;color:#7654df}.user{position:relative;flex:none}.userbtn{border:0;background:#fff;box-shadow:0 3px 16px #7c3aed25;border-radius:14px;padding:6px 10px;display:flex;align-items:center;gap:7px;font:800 15px 'Roboto Condensed';color:#334155;cursor:pointer}.avatar{width:32px;height:32px;border-radius:50%;background:#111827;color:#fff;display:grid;place-items:center}.bal{color:#a78bfa;font-size:13px}.dropdown{position:absolute;right:0;top:52px;width:190px;background:#fff;border-radius:10px;box-shadow:0 12px 30px #0005;padding:8px;display:none}.dropdown.show{display:block}.dropdown button{width:100%;border:0;background:none;text-align:left;padding:11px;border-radius:7px;font:600 16px 'Roboto Condensed';cursor:pointer}.dropdown button:hover{background:#f1f3ff;color:#7654df}
+main{padding-top:38px}.hero{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(300px,.92fr);gap:14px;align-items:stretch}.video-card,.deposit-card{border-radius:10px;overflow:hidden;min-height:320px;box-shadow:0 0 0 2px #9a6bff}.video-card{background:#080914;position:relative;display:flex;flex-direction:column}.video-cover{min-height:320px;flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:20px 24px;color:#fff;background:radial-gradient(ellipse at 50% 100%,#5925bd 0,transparent 55%),linear-gradient(135deg,#101a3b,#09090d 55%,#2b1057)}.video-title{font-size:clamp(20px,2vw,28px);font-weight:800;text-shadow:0 2px 8px #000}.video-title small{display:block;font-size:15px;font-weight:600;margin-top:4px}.video-center{align-self:center;text-align:center}.play{width:70px;height:48px;border-radius:14px;background:#ff0033;color:#fff;display:grid;place-items:center;font-size:26px;box-shadow:0 8px 30px #0008}.video-center span{display:block;font-weight:800;margin-top:10px;font-size:clamp(24px,3vw,43px);text-transform:uppercase;font-style:italic;text-shadow:2px 3px #ed2a25}.video-bottom{display:flex;justify-content:space-between;align-items:center;font-weight:700}.video-bottom a{background:#ffffff20;border:1px solid #ffffff55;padding:8px 12px;border-radius:8px}.deposit-card{background:#fff;box-shadow:none;border:1px solid #b7a4ff;display:flex;flex-direction:column}.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:#8d7bd4;color:#fff}.tabs button{border:0;padding:13px 5px;color:#fff;background:transparent;font:800 14px 'Roboto Condensed';cursor:pointer}.tabs button.active{background:#ad9bff;box-shadow:inset 0 -3px #ffe45b}.deposit-content{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px;color:#64748b;gap:12px}.deposit-content i{font-size:42px;color:#cbd5e1}.deposit-content p{margin:0;font-size:16px;font-weight:700}.login-cta{border:0;background:#a18aff;color:#fff;padding:10px 22px;border-radius:5px;font:800 15px 'Roboto Condensed';cursor:pointer}.notice{background:#fff;border:1px solid #c4b5fd;border-radius:9px;margin-top:15px;padding:14px 17px;line-height:1.5;font-size:17px;font-weight:700}.notice a{color:#e3a400}.notice-row{display:flex;gap:9px;align-items:flex-start}.notice-row i{width:22px;text-align:center;color:#536174;padding-top:3px}.strip{background:#fff;border-radius:9px;margin-top:12px;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800;box-shadow:0 3px 15px #0003}.strip-left{display:flex;align-items:center;gap:10px}.pill{background:#f2edff;color:#8b78d8;border-radius:12px;padding:5px 10px;font-size:12px}.tag{color:#e74b68;background:#fff0f3;padding:4px 8px;border-radius:5px}.section-title{color:#fff;font-size:23px;margin:28px 0 12px}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}.product{background:#fff;border-radius:10px;padding:18px;display:flex;gap:14px;align-items:center}.product-icon{width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg,#9e8bff,#d4caff);display:grid;place-items:center;color:white;font-size:25px;flex:none}.product h3{margin:0 0 5px;font-size:17px}.product p{margin:0;color:#16a36b;font-weight:800}.music{position:fixed;right:20px;bottom:18px;background:#090a12e8;color:#fff;border:0;border-radius:22px;padding:12px 16px;font-weight:700;z-index:60;cursor:pointer}.top{position:fixed;right:25px;bottom:74px;width:44px;height:44px;border-radius:50%;background:#a78bfa;color:#fff;border:0;font-size:22px;cursor:pointer}footer{color:#aaa;text-align:center;padding:22px;border-top:1px solid #222}.mobile{display:none}
+@media(max-width:1150px){.navlinks{gap:0}.navbtn{font-size:12px;padding:8px 5px;gap:5px}.navbtn i{width:24px;height:24px}.logo{width:130px}.userbtn{font-size:13px}.hero{grid-template-columns:minmax(0,1.5fr) minmax(270px,1fr)}}
+@media(max-width:850px){.nav{top:6px;margin-top:7px;padding:9px}.navlinks{display:none;position:absolute;left:0;right:0;top:68px;background:#fff;border-radius:10px;padding:10px;box-shadow:0 12px 25px #0005;flex-direction:column;align-items:stretch}.navlinks.mobileOpen{display:flex}.navbtn{font-size:14px;padding:9px}.mobile{display:block;margin-left:auto;border:0;background:#eef2ff;border-radius:9px;padding:10px 13px;font-size:18px}.nav .logo{width:125px}.hero{grid-template-columns:1fr}.video-cover{min-height:280px}.deposit-card{min-height:270px}.products{grid-template-columns:1fr}.strip{align-items:flex-start;flex-direction:column}.notice{font-size:15px}main{padding-top:25px}}
 </style>
 </head>
-<body>
-<div class="wrap">
+<body><div class="wrap">
 <header class="nav">
 <a href="./" aria-label="Trang chủ"><img class="logo" src="logo.svg" alt="SHOP KATORI"></a>
-<nav class="navlinks">
+<nav class="navlinks" id="navlinks">
 <a class="navbtn" href="./"><i class="fa-solid fa-house"></i>TRANG CHỦ</a>
-<a class="navbtn" href="#history"><i class="fa-solid fa-gamepad"></i>LỊCH SỬ MUA <span>⌄</span></a>
-<a class="navbtn" href="#services"><i class="fa-solid fa-layer-group"></i>DỊCH VỤ KHÁC <span>⌄</span></a>
+<a class="navbtn" href="#history"><i class="fa-solid fa-gamepad"></i>LỊCH SỬ MUA⌄</a>
+<a class="navbtn" href="#services"><i class="fa-solid fa-layer-group"></i>DỊCH VỤ KHÁC⌄</a>
 <a class="navbtn" href="#profile" onclick="needLogin(event)"><i class="fa-regular fa-id-card"></i>HỒ SƠ</a>
-<a class="navbtn" href="#deposit" onclick="needLogin(event)"><i class="fa-regular fa-credit-card"></i>NẠP TIỀN <span>⌄</span></a>
+<a class="navbtn" href="#deposit" onclick="needLogin(event)"><i class="fa-regular fa-credit-card"></i>NẠP TIỀN⌄</a>
 <a class="navbtn" href="#money"><i class="fa-solid fa-dollar-sign"></i>DÒNG TIỀN</a>
 <a class="navbtn" href="#news"><i class="fa-regular fa-newspaper"></i>TIN TỨC</a>
-<a class="navbtn" href="#more"><i class="fa-solid fa-circle-info"></i>BỔ SUNG <span>⌄</span></a>
-<a class="navbtn" href="#lang"><i class="fa-solid fa-globe"></i></a>
+<a class="navbtn" href="#more"><i class="fa-solid fa-circle-info"></i>BỔ SUNG⌄</a>
+<a class="navbtn" href="#lang" aria-label="Ngôn ngữ"><i class="fa-solid fa-globe"></i></a>
 </nav>
-<div class="user">
-<button class="userbtn" onclick="toggleUser()"><span class="avatar"><i class="fa-solid fa-user"></i></span><span id="username">Khách</span><span class="bal" id="balance">0 đ</span><span>⌄</span></button>
-<div class="dropdown" id="dropdown">
-<button onclick="location.href='login.html'"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;Đăng Nhập</button>
-<button onclick="location.href='login.html?register=1'"><i class="fa-regular fa-user"></i> &nbsp;Tạo Tài Khoản</button>
-</div></div>
-<button class="mobile" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+<div class="user"><button class="userbtn" onclick="toggleUser()"><span class="avatar"><i class="fa-solid fa-user"></i></span><span id="username">Khách</span><span><span class="bal" id="balance">0 đ</span>⌄</span></button><div class="dropdown" id="dropdown"><button onclick="location.href='login.html'"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;Đăng Nhập</button><button onclick="location.href='login.html?register=1'"><i class="fa-regular fa-user"></i> &nbsp;Tạo Tài Khoản</button></div></div>
+<button class="mobile" onclick="toggleMenu()" aria-label="Mở menu"><i class="fa-solid fa-bars"></i></button>
 </header>
-
 <main>
 <section class="hero">
-<article class="service-card">
-<div class="service-art">🪧</div>
-<div class="service-body"><h3>Donate Sộp Để Có Nhiều Event</h3><div class="ready">Sẵn Sàng</div><a class="cta" href="#services">XEM TẤT CẢ &nbsp;→</a></div>
-</article>
-<div class="hero-space"></div>
+<div class="video-card"><div class="video-cover"><div class="video-title">🎮 SHOP KATORI — DỊCH VỤ GAME<small>Cày thuê • Vật phẩm • Hỗ trợ khách hàng</small></div><div class="video-center"><div class="play"><i class="fa-solid fa-play"></i></div><span>SHOP KATORI</span></div><div class="video-bottom"><span><i class="fa-solid fa-bolt"></i> Dịch vụ nhanh chóng</span><a href="#services">Khám phá dịch vụ ↗</a></div></div></div>
+<aside class="deposit-card" id="deposit"><div class="tabs"><button class="active" onclick="setTab(this,'Nạp thẻ')"><i class="fa-solid fa-credit-card"></i> Nạp Thẻ</button><button onclick="setTab(this,'TOP Nạp')"><i class="fa-solid fa-trophy"></i> TOP Nạp</button><button onclick="setTab(this,'Ngân Hàng')"><i class="fa-solid fa-building-columns"></i> Ngân Hàng</button></div><div class="deposit-content"><i class="fa-regular fa-circle-user"></i><p id="depositMessage">Vui lòng đăng nhập để nạp thẻ</p><button class="login-cta" onclick="location.href='login.html'">Đăng Nhập</button></div></aside>
 </section>
-
-<section class="info">
-<h2>SHOP KATORI.COM – KHÁCH HÀNG LÀ TRÊN HẾT</h2>
-<p>Tự hào là điểm đến tin cậy cho người có tiền và học sinh có nhu cầu <b>Cày Thuê game và Mua Vật Phẩm giá rẻ.</b> Đến với chúng tôi, bạn không chỉ nhận được dịch vụ chất lượng cao, mà còn được bảo vệ quyền lợi tuyệt đối với 5 cam kết vàng:</p>
-<ul>
-<li>🎮 <b>Cày Thuê & Vật Phẩm Giá Rẻ:</b> Đội ngũ chuyên nghiệp xử lý đơn hàng siêu tốc, cung cấp vật phẩm với mức giá cạnh tranh.</li>
-<li>🛡️ <b>Bảo Mật Độ Tuyệt Đối:</b> Cam kết bảo mật thông tin tài khoản, giữ nguyên vẹn 100% trang bị, trái và vật phẩm có sẵn trong acc của bạn.</li>
-<li>💵 <b>Chính Sách Hoàn Tiền:</b> Sẵn sàng hoàn trả tiền giao dịch hoặc đền bù thỏa đáng nếu có sai sót từ phía shop.</li>
-<li>👥 <b>Nhân Viên Hỗ Trợ Tận Tâm:</b> Đội ngũ hỗ trợ tư vấn 24/7, giải đáp và xử lý yêu cầu nhanh nhất.</li>
-<li>⚡ <b>Hệ Thống Tự Động 24/7:</b> Vận hành tự động từ khâu nhận đơn đến hoàn thành.</li>
-</ul>
+<section class="notice">
+<div class="notice-row"><i class="fa-regular fa-clipboard"></i><span>Chính Sách & Quy Định: <a href="#rules">Quy Định Chung | Điều Khoản & Miễn Trừ Trách Nhiệm</a></span></div>
+<div class="notice-row"><i class="fa-regular fa-comments"></i><span>Kênh Hỗ Trợ: <a href="#support">Discord (Hỗ Trợ Chính) | Facebook CSKH | Zalo</a></span></div>
+<div class="notice-row"><i class="fa-solid fa-magnifying-glass"></i><span>Tra Cứu Giao Dịch: <a href="#history">Tiến Độ Cày Thuê | Lịch Sử Mua Acc / Game Pass</a></span></div>
 </section>
-</main>
-<footer>© 2026 SHOP KATORI - Tất cả quyền được bảo lưu.</footer>
-</div>
-<button class="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
-<button class="music" id="music" onclick="toggleMusic()">♫ &nbsp; Nhạc nền</button>
-<audio id="bgMusic" loop><source src="Có Em.mp3" type="audio/mpeg"></audio>
-
-<div class="modal" id="modal"><div class="modalbox">
-<button class="close" onclick="closeModal()">×</button><h2>Đăng Nhập</h2><p class="sub">Đăng nhập để tiếp tục trải nghiệm của bạn</p>
-<form onsubmit="login(event)">
-<div class="field"><label>Tài khoản</label><input id="loginUser" required placeholder="Nhập tên tài khoản"></div>
-<div class="field"><label>Mật khẩu</label><input id="loginPass" required type="password" placeholder="Nhập mật khẩu"></div>
-<label style="display:flex;gap:8px;align-items:center;font-weight:700;margin:10px 0 20px"><input type="checkbox"> Ghi nhớ đăng nhập</label>
-<button class="submit">Đăng nhập</button></form>
-<div style="text-align:center;margin-top:22px;font-weight:800;color:#64748b">Hoặc đăng nhập với</div>
-<div class="socials"><button class="fb">f</button><button class="gg">G</button><button class="dc"><i class="fa-solid fa-user"></i></button></div>
-</div></div>
-
+<div class="strip"><div class="strip-left"><i class="fa-regular fa-bell" style="color:#9b87ef;font-size:20px"></i><span class="pill">THÔNG BÁO</span></div><div><span class="tag">SHOP KATORI</span> &nbsp;Chào mừng bạn đến với cửa hàng!</div></div>
+<div class="strip" id="services"><div class="strip-left"><i class="fa-solid fa-gamepad" style="color:#21bf89;font-size:20px"></i><span class="pill">DỊCH VỤ</span></div><span>Chọn dịch vụ phù hợp với bạn bên dưới</span></div>
+<h2 class="section-title">Dịch vụ nổi bật</h2>
+<section class="products">
+<a class="product" href="#services"><div class="product-icon"><i class="fa-solid fa-dragon"></i></div><div><h3>Cày thuê Blox Fruit</h3><p><i class="fa-solid fa-circle-check"></i> Sẵn sàng phục vụ</p></div></a>
+<a class="product" href="#services"><div class="product-icon"><i class="fa-solid fa-gamepad"></i></div><div><h3>Acc Game & Vật Phẩm</h3><p><i class="fa-solid fa-circle-check"></i> Xem danh mục</p></div></a>
+<a class="product" href="#support"><div class="product-icon"><i class="fa-solid fa-headset"></i></div><div><h3>Hỗ trợ khách hàng</h3><p><i class="fa-solid fa-clock"></i> Liên hệ hỗ trợ</p></div></a>
+</section>
+</main><footer>© 2026 SHOP KATORI — Tất cả quyền được bảo lưu.</footer></div>
+<button class="top" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Lên đầu trang">↑</button>
+<button class="music" id="music" onclick="toggleMusic()">♫ &nbsp; Nhạc nền</button><audio id="bgMusic" loop><source src="Có Em.mp3" type="audio/mpeg"></audio>
 <script>
-function users(){return JSON.parse(localStorage.getItem('katori_users_db')||'{}')}
+function users(){try{return JSON.parse(localStorage.getItem('katori_users_db')||'{}')}catch(e){return {}}}
 function toggleUser(){document.getElementById('dropdown').classList.toggle('show')}
-function toggleMenu(){document.querySelector('.navlinks').classList.toggle('mobileOpen')}
+function toggleMenu(){document.getElementById('navlinks').classList.toggle('mobileOpen')}
 function needLogin(e){if(!localStorage.getItem('katori_current_user')){e.preventDefault();location.href='login.html'}}
+function setTab(btn,label){document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const u=localStorage.getItem('katori_current_user');document.getElementById('depositMessage').textContent=u?(label==='TOP Nạp'?'Bảng xếp hạng nạp sẽ hiển thị khi có dữ liệu.':label==='Ngân Hàng'?'Vui lòng kiểm tra thông tin ngân hàng trong tài khoản.':'Chọn phương thức nạp trong tài khoản của bạn.'):'Vui lòng đăng nhập để '+(label==='TOP Nạp'?'xem TOP nạp':label==='Ngân Hàng'?'nạp qua ngân hàng':'nạp thẻ')}
+function toggleMusic(){const a=document.getElementById('bgMusic');if(a.paused){a.play().then(()=>document.getElementById('music').textContent='♫  Nhạc nền: BẬT').catch(()=>alert('Chưa tìm thấy tệp nhạc nền.'))}else{a.pause();document.getElementById('music').textContent='♫  Nhạc nền'}}
 function login(e){e.preventDefault();const u=document.getElementById('loginUser').value.trim(),p=document.getElementById('loginPass').value,db=users();if(!db[u]||db[u].password!==p){alert('Tài khoản hoặc mật khẩu không chính xác!');return}localStorage.setItem('katori_current_user',u);location.href='./'}
-function toggleMusic(){const a=document.getElementById('bgMusic');if(a.paused){a.play();document.getElementById('music').innerHTML='♫ &nbsp; Nhạc nền: BẬT'}else{a.pause();document.getElementById('music').innerHTML='♫ &nbsp; Nhạc nền: TẮT'}}
-window.addEventListener('DOMContentLoaded',()=>{const u=localStorage.getItem('katori_current_user'),db=users();if(u&&db[u]){document.getElementById('username').textContent=u;document.getElementById('balance').textContent=(db[u].balance||0).toLocaleString('vi-VN')+' đ'}})
-document.addEventListener('click',e=>{if(!e.target.closest('.user'))document.getElementById('dropdown').classList.remove('show')})
-</script>
-</body>
-</html>
+window.addEventListener('DOMContentLoaded',()=>{const u=localStorage.getItem('katori_current_user'),db=users();if(u&&db[u]){document.getElementById('username').textContent=u;document.getElementById('balance').textContent=(db[u].balance||0).toLocaleString('vi-VN')+' đ';document.querySelector('.login-cta').textContent='Vào tài khoản';document.querySelector('.login-cta').onclick=()=>location.href='profile.html';document.getElementById('depositMessage').textContent='Xin chào '+u+'! Chọn phương thức nạp bên dưới.'}});
+document.addEventListener('click',e=>{if(!e.target.closest('.user'))document.getElementById('dropdown').classList.remove('show')});
+</script></body></html>
