@@ -44,74 +44,60 @@
     }
   </style>
 <style id="reference-match-overrides">
-  /* Reference-match pass based on the supplied shopngothien.com screen recording */
-  body { background:#000!important; color:#222; font-family:Arial,"Roboto Condensed",sans-serif!important; }
-  header.sticky {
-    position:sticky; top:8px; z-index:100; width:calc(100% - 32px)!important; max-width:1600px!important;
-    margin:10px auto 16px!important; border-radius:9px!important; background:#fff!important;
-    color:#283044!important; border:1px solid #e6e6ef!important; box-shadow:0 7px 18px rgba(255,255,255,.22)!important;
-    overflow:visible!important;
-  }
-  header.sticky > div:first-child { max-width:none!important; min-height:62px; padding:8px 16px!important; gap:10px!important; }
-  header.sticky nav { gap:6px!important; font-size:12px!important; }
-  header.sticky nav button, header.sticky nav > div > button {
-    background:#fff!important; color:#30364b!important; box-shadow:none!important; border:0!important;
-    padding:8px 10px!important; border-radius:9px!important; white-space:nowrap;
-  }
-  header.sticky nav button:hover, header.sticky nav > div > button:hover { background:#f4f1ff!important; color:#8b6ee8!important; }
-  header.sticky nav button i, header.sticky nav > div > button i { font-size:13px!important; }
-  header.sticky #userBadgeArea > button { background:#fff!important; color:#30364b!important; border:1px solid #eee!important; box-shadow:0 2px 8px #ddd!important; padding:8px 10px!important; }
-  header.sticky #navBalance { color:#9b79ee!important; }
-  header.sticky #userDropdown, header.sticky nav .absolute { background:#fff!important; color:#30364b!important; border-color:#e8e4f5!important; }
-  header.sticky #userDropdown button, header.sticky nav .absolute a { color:#30364b!important; }
-  header.sticky #mobileMenu { background:#fff!important; }
-  header.sticky #mobileMenu button { margin:2px 0; }
-  main.max-w-7xl { max-width:1400px!important; padding:0 8px 24px!important; gap:12px!important; }
-  main.max-w-7xl > div:first-child { gap:12px!important; }
-  main.max-w-7xl > div:first-child > div {
-    background:#fff!important; color:#30364b!important; border:2px solid #8b6ce9!important;
-    border-radius:12px!important; box-shadow:0 3px 12px rgba(130,90,230,.15)!important;
-  }
-  main.max-w-7xl > div:first-child > div:first-child { border-color:#8b6ce9!important; }
-  main.max-w-7xl > div:first-child > div:first-child > div:first-child {
-    background:#fff!important; color:#30364b!important; border-bottom:1px solid #eee!important;
-  }
-  main.max-w-7xl > div:first-child > div:first-child > div:last-child {
-    background:#fff!important; color:#555!important;
-  }
-  main.max-w-7xl > div:first-child > div:nth-child(2) { padding:0!important; overflow:hidden; }
-  main.max-w-7xl > div:first-child > div:nth-child(2) > div:first-child { padding:0!important; }
-  main.max-w-7xl > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
-    background:#8b6ce9!important; border-color:#8b6ce9!important; color:#fff!important; padding:12px!important;
-  }
-  #depositGuestBox { background:#fff!important; color:#555!important; min-height:280px; }
-  #depositGuestBox p { color:#555!important; }
-  #depositGuestBox > div { background:#f7f7fb!important; color:#aaa!important; border-color:#e8e8ef!important; }
-  #depositGuestBox button, #depositUserForm button { background:#9b7bed!important; color:#fff!important; border-radius:5px!important; }
-  .max-w-7xl > .bg-slate-900.text-white.rounded-2xl.p-4 {
-    background:#fff!important; color:#34384b!important; border:1px solid #dcd8f3!important; border-radius:8px!important;
-  }
-  .max-w-7xl > .bg-slate-900.text-white.rounded-2xl.p-4 a { color:#d5a900!important; }
-  #services { padding-top:2px!important; }
-  #services > div:first-child { color:#a17af1!important; border-color:#a17af1!important; }
-  #services h2 { color:#a17af1!important; font-size:18px!important; }
-  #services > div:nth-child(2) { gap:10px!important; }
-  #services .neon-border {
-    background:#fff!important; color:#34384b!important; border:1px solid #a77bf0!important;
-    border-radius:5px!important; box-shadow:0 1px 5px rgba(0,0,0,.15)!important; overflow:hidden;
-  }
-  #services .neon-border > div:first-child { background:#fff!important; }
-  #services .neon-border h3 { color:#a72a72!important; font-size:12px!important; min-height:34px; }
-  #services .neon-border p { color:#3eaa78!important; }
-  #services .neon-border button { background:#9a78ec!important; border-radius:3px!important; }
-  #services img { object-fit:cover; }
-  footer { background:#171717!important; color:#eee!important; }
-  @media(max-width:767px) {
-    header.sticky { width:calc(100% - 12px)!important; margin:6px auto 10px!important; }
-    header.sticky > div:first-child { min-height:48px; padding:6px 8px!important; }
-    main.max-w-7xl { padding:0 6px 18px!important; }
-    #depositGuestBox { min-height:180px; }
-  }
+  :root{--ref-purple:#9b7bec;--ref-border:#d9d1f7;--ref-text:#4b4b55}
+  *{box-sizing:border-box}
+  body{background:#000!important;color:#30303b!important;font-family:"Roboto Condensed",Arial,sans-serif!important}
+  header.sticky{position:sticky;top:8px;z-index:100;width:calc(100% - 34px)!important;max-width:1628px!important;margin:10px auto 38px!important;border-radius:10px!important;background:#fff!important;color:#343445!important;border:1px solid #e9e5f1!important;box-shadow:0 8px 20px rgba(255,255,255,.18)!important;overflow:visible!important}
+  header.sticky>div:first-child{max-width:none!important;min-height:78px;padding:10px 18px!important;gap:12px!important}
+  header.sticky a.flex.items-center.shrink-0{width:164px;height:46px;overflow:hidden}
+  header.sticky a.flex.items-center.shrink-0>div{display:none!important}
+  header.sticky a.flex.items-center.shrink-0:after{content:"";display:block;width:164px;height:46px;background:url('assets/shop-logo.svg') center/contain no-repeat}
+  header.sticky nav{gap:7px!important;font-size:12px!important;align-items:center}
+  header.sticky nav button,header.sticky nav>div>button{background:#fff!important;color:#424453!important;box-shadow:none!important;border:0!important;padding:9px 9px!important;border-radius:9px!important;white-space:nowrap;font-weight:800!important}
+  header.sticky nav button:hover,header.sticky nav>div>button:hover{background:#f5f1ff!important;color:#8d72dc!important}
+  header.sticky nav button i,header.sticky nav>div>button i{font-size:13px!important}
+  header.sticky nav button:first-child{color:#9074df!important}
+  header.sticky nav button:nth-of-type(2){color:#4c4c5a!important}
+  header.sticky #userBadgeArea>button{background:#fff!important;color:#454556!important;border:1px solid #eae7f0!important;box-shadow:0 2px 8px #e4e0ec!important;padding:8px 11px!important}
+  header.sticky #navBalance{color:#a18ae5!important}
+  header.sticky #userDropdown,header.sticky nav .absolute{background:#fff!important;color:#343445!important;border-color:#e8e4f5!important}
+  header.sticky #userDropdown button,header.sticky nav .absolute a{color:#343445!important}
+  header.sticky #mobileMenu{background:#fff!important}
+  header.sticky #mobileMenu button{margin:2px 0}
+  main.max-w-7xl{max-width:1400px!important;padding:0 8px 28px!important;gap:14px!important}
+  main.max-w-7xl>div:first-child{gap:12px!important}
+  main.max-w-7xl>div:first-child>div{background:#fff!important;color:#444452!important;border:2px solid var(--ref-purple)!important;border-radius:12px!important;box-shadow:0 3px 12px rgba(130,90,230,.16)!important}
+  main.max-w-7xl>div:first-child>div:first-child{border-color:#a77bf0!important;padding:0!important}
+  main.max-w-7xl>div:first-child>div:first-child>div:first-child{display:none!important}
+  main.max-w-7xl>div:first-child>div:first-child>div:last-child{display:none!important}
+  main.max-w-7xl>div:first-child>div:nth-child(2){padding:0!important;overflow:hidden}
+  main.max-w-7xl>div:first-child>div:nth-child(2)>div:first-child{padding:0!important}
+  main.max-w-7xl>div:first-child>div:nth-child(2)>div:first-child>div:first-child{background:linear-gradient(90deg,#a78af5,#8e72df)!important;border-color:#a78af5!important;color:#fff!important;padding:12px!important}
+  #depositGuestBox{background:#fff!important;color:#555!important;min-height:280px}
+  #depositGuestBox p{color:#686878!important;font-size:14px!important}
+  #depositGuestBox>div{background:#fff!important;color:#c8cbd7!important;border:0!important;box-shadow:none!important}
+  #depositGuestBox button,#depositUserForm button{background:#a185ed!important;color:#fff!important;border-radius:5px!important}
+  .max-w-7xl>.bg-slate-900.text-white.rounded-2xl.p-4{background:#fff!important;color:#42424e!important;border:1px solid #ded8f5!important;border-radius:9px!important;box-shadow:none!important}
+  .max-w-7xl>.bg-slate-900.text-white.rounded-2xl.p-4 a{color:#d6ad14!important}
+  #services{padding-top:2px!important}
+  #services>div:first-child{color:#a17af1!important;border-color:#a17af1!important}
+  #services h2{color:#a17af1!important;font-size:20px!important}
+  #services>div:nth-child(2){gap:10px!important}
+  #services .neon-border{background:#fff!important;color:#34384b!important;border:1px solid #a77bf0!important;border-radius:5px!important;box-shadow:0 1px 5px rgba(0,0,0,.15)!important;overflow:hidden}
+  #services .neon-border>div:first-child{background:#fff!important}
+  #services .neon-border h3{color:#bd286e!important;font-size:13px!important;min-height:36px}
+  #services .neon-border p{color:#39a77a!important}
+  #services .neon-border button{background:#9a78ec!important;border-radius:3px!important}
+  #services img{object-fit:cover}
+  #heroReferenceImage{display:block;width:100%;height:100%;object-fit:cover}
+  #heroVideoLink{display:block;position:relative;aspect-ratio:16/7.15;background:#080813;overflow:hidden}
+  #heroVideoLink:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.06))}
+  #heroVideoLink .play-overlay{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:#ff0033;border-radius:14px;display:grid;place-items:center;color:#fff;font-size:26px;box-shadow:0 3px 15px #0008}
+  .ref-socials{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 8px 4px}
+  .ref-socials a{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:13px;color:#fff;background:#19151f;border:1px solid #40324e;border-radius:6px;padding:8px 13px}
+  .ref-socials a:hover{background:#30213f}
+  footer{background:#171717!important;color:#eee!important}
+  @media(max-width:767px){header.sticky{width:calc(100% - 12px)!important;margin:6px auto 14px!important}header.sticky>div:first-child{min-height:50px;padding:6px 8px!important}header.sticky a.flex.items-center.shrink-0{width:112px;height:34px}header.sticky a.flex.items-center.shrink-0:after{width:112px;height:34px}main.max-w-7xl{padding:0 6px 18px!important}#depositGuestBox{min-height:180px}#heroVideoLink{aspect-ratio:16/9}}
 </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
@@ -122,9 +108,7 @@
       
       <!-- LOGO NGÔ THIÊN -->
       <a href="javascript:void(0)" onclick="openWelcomeModal()" class="flex items-center shrink-0">
-        <div class="bg-gradient-to-r from-red-600 to-orange-600 text-white font-black text-xs sm:text-sm px-2.5 py-1 rounded shadow group hover:scale-105 transition">
-          NGÔ THIÊN
-        </div>
+        <span class="sr-only">Shop Ngô Thiên</span>
       </a>
 
       <!-- DESKTOP NAVBAR (LAPTOP / PC - COMPACT PILL BUTTONS) -->
@@ -272,14 +256,7 @@
         </div>
         
         <div class="relative w-full aspect-video bg-black flex items-center justify-center">
-          <iframe 
-            class="w-full h-full"
-            src="https://www.youtube.com/embed?listType=search&list=1%20%C4%90%C3%AAm%20C%C3%A0y%20Thu%C3%AA%20C%E1%BB%A7a%20M%E1%BB%99t%20Shop%20V%C3%B4%20Danh" 
-            title="Video Giới Thiệu"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+          <a id="heroVideoLink" href="https://www.youtube.com/results?search_query=1+Đêm+Cày+Thuê+Của+Một+Shop+Vô+Danh" target="_blank" rel="noopener" aria-label="Xem video giới thiệu trên YouTube"><img id="heroReferenceImage" src="assets/hero-banner.svg" alt="1 Đêm Cày Thuê Của Một Shop Vô Danh"><span class="play-overlay"><i class="fa-solid fa-play"></i></span></a>
         </div>
 
         <div class="p-2 bg-slate-950 text-slate-300 text-xs flex items-center justify-between border-t border-purple-900/40">
@@ -396,7 +373,14 @@
       </div>
     </div>
 
-    <!-- ================= 16 BLOX FRUITS PRODUCTS GRID ================= -->
+
+    <div class="ref-socials" aria-label="Kênh mạng xã hội">
+      <a href="https://zalo.me/" target="_blank" rel="noopener"><i class="fa-solid fa-comment-dots" style="color:#53a6ff"></i> Zalo</a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" style="color:#ff3333"></i> YouTube</a>
+      <a href="https://discord.com/" target="_blank" rel="noopener"><i class="fa-brands fa-discord" style="color:#8b9dff"></i> Discord</a>
+    </div>
+\n    <!-- ================= 16 BLOX FRUITS PRODUCTS GRID ================= -->
     <section id="services" class="space-y-3 pt-2">
       <div class="flex items-center justify-between">
         <h2 class="text-lg sm:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-purple-300 to-white flex items-center gap-2">
@@ -799,7 +783,6 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       updateUserUI();
-      openWelcomeModal();
     });
 
     function startMusic() {
